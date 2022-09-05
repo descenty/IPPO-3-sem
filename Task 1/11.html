@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Элементы формы</title>
+</head>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .text-input {
+        font-size: medium;
+        padding: 5px;
+        width: 40%;
+        margin-bottom: 10px;
+    }
+
+    #gender-div {
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+        margin-bottom: 5px;
+    }
+
+    .gender-input {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+    }
+
+    label {
+        margin: 5px;
+    }
+
+    button {
+        font-size: medium;
+        padding: 10px;
+    }
+
+    #terms-of-use-label {
+        margin-top: 10px;
+    }
+
+    #terms-of-use-checkbox {
+        margin-bottom: 15px;
+    }
+</style>
+
+<body>
+    <h1>Регистрация</h1>
+    <form>
+        <label for="fio">ФИО</label>
+        <input class="text-input" type="text" name="fio" id="fio">
+        <label for="phone">Телефон</label>
+        <input class="text-input" type="text" name="phone" id="phone">
+        <label for="email">E-mail</label>
+        <input class="text-input" type="text" name="email" id="email">
+        <label for="password">Пароль</label>
+        <input class="text-input" type="password" name="password" id="password">
+        <div id="gender-div">
+            <div class="gender-input">
+                <label for="male-choice">Мужской</label>
+                <input type="radio" name="gender" id="male-choice" value="male">
+            </div>
+            <div class="gender-input">
+                <label for="female-choice">Женский</label>
+                <input type="radio" name="gender" id="female-choice" value="female">
+            </div>
+        </div>
+        <label for="city">Город</label>
+        <select class="text-input" name="city" id="city">
+            <option>Москва</option>
+            <option>Санкт-Петербург</option>
+            <option>Казань</option>
+            <option>Ярославль</option>
+            <option>Владимир</option>
+            <option>Тула</option>
+            <option>Калуга</option>
+        </select>
+        <div>
+            <label id="terms-of-use-label" for="terms-of-use-checkbox">Я принимаю условия <a href="https://account.habr.com/info/agreement/">Пользовательского соглашения</a></label>
+            <input type="checkbox" name="terms-of-use" id="terms-of-use-checkbox">
+        </div>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+</body>
+
+</html>

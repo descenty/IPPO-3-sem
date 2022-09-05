@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тег div</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+        }
+        .cell {
+            border-style: solid;
+            padding: 5px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: whitesmoke;
+            text-align: justify;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-family: Arial;">CSS Grid Layout</h1>
+    <div class="container">
+        <div class="cell">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, necessitatibus.</div>
+        <div class="cell">Lorem ipsum dolor sit amet.</div>
+        <div class="cell">Lorem, ipsum dolor.</div>
+        <div class="cell">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate, ad.</div>
+        <div class="cell">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae aliquam dolorem ipsum reprehenderit commodi quaerat, doloribus tempore illo, quo sit veritatis incidunt nam? Voluptate nesciunt delectus odit sed animi aliquam?</div>
+        <div class="cell">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, libero!</div>
+    </div>
+</body>
+</html>

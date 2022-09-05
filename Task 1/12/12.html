@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Теги video, audio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-left: 10px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: aliceblue;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 20px;
+        }
+
+        p {
+            padding: 2px;
+        }
+
+        #listen-div {
+            display: flex;
+            align-items: center;
+        }
+
+        #title-div {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="title-div">
+            <img src="fastapi.svg" alt="" height="32">
+            <h2 style="margin-left: 16px;">FastAPI</h2>
+        </div>
+        <div id="listen-div">
+            <span style="padding-right:16px;">Прослушать статью</span>
+            <audio controls src="tts.ogg"></audio>
+        </div>
+    </header>
+    <p>
+        Когда веб-фреймворки Python, такие как Flask и Django, впервые появились и начали приобретать популярность и
+        известность, Python был несколько другим языком, чем сегодня. Многие элементы современного Python, такие как
+        асинхронное выполнение и стандарт ASGI (Asynchronous Server Gateway Interface), на тот момент либо находились в
+        зачаточном состоянии, либо еще не существовали. Поэтому не удивительно, что сейчас возникают новые фреймворки.
+        Один из них — FastAPI. В этой статье мы разберем, как начать работать с FastAPI на Python.
+    </p>
+    <p>
+        FastAPI – это веб-фреймворк Python, который изначально создавался для использования современных функций Python.
+        Он использует стандарт ASGI для асинхронного, конкурентного соединения с клиентами. При необходимости также
+        может работать с WSGI. Асинхронные функции могут использоваться для маршрутов и конечных точек. Кроме того,
+        FastAPI позволяет быстро и эффективно создавать веб-приложения с чистым, современным Python-кодом, с подсказками
+        типов.
+    </p>
+    <p>
+        Как следует из названия, основным вариантом использования FastAPI является создание конечных точек API. Для
+        этого нужно просто вернуть данные словаря Python в формате JSON или использовать стандарт OpenAPI, включая
+        интерактивный Swagger UI.
+    </p>
+    <p>
+        Но FastAPI никоим образом не ограничивается API. С его помощью можно сделать практически все, что делают с
+        использованием веб-фреймворков. От доставки простеньких старых веб-страниц с применением движка шаблонов Jinja2
+        до обслуживания приложений на базе WebSockets.
+    </p>
+    <h3>Пишем первый проект на FastAPI</h3>
+    <video width="600" controls>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+</body>
+
+</html>
