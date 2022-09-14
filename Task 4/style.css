@@ -9,10 +9,17 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: sans-serif;
     background: #222831;
     color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
 }
 
 header,
@@ -26,6 +33,7 @@ footer {
 
 
 header {
+    position: fixed;
     justify-content: space-between;
     width: 100%;
     padding: 1em 8em;
@@ -45,15 +53,17 @@ header {
 nav {
     justify-content: space-between;
     align-self: flex-end;
+    gap: 2em
 }
 
 nav a {
     text-decoration: none;
     color: #fff;
-    padding: 1em 2em;
+    padding: 1em 1em;
     border: 1px solid transparent;
     border-radius: 0.3em;
     transition: 0.3s;
+    text-align: center;
 }
 
 nav a:hover {
@@ -62,6 +72,9 @@ nav a:hover {
 
 section {
     height: 85vh;
+    flex-wrap: wrap;
+    border-style: solid;
+    padding-top: 5em;
 }
 
 
@@ -120,6 +133,10 @@ footer {
     justify-content: space-around;
 }
 
+.self-flex-end {
+    align-self: flex-end;
+}
+
 .gap-10 {
     gap: 10em;
 }
@@ -135,4 +152,12 @@ footer {
 
 #third-flex:hover {
     flex-direction: column;
+}
+
+#third-flex:hover div {
+    width: 100%;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
 }
