@@ -1,0 +1,138 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('Oswald.ttf')
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background: #222831;
+    color: white;
+}
+
+header,
+nav,
+section,
+.content-container,
+footer {
+    display: flex;
+    align-items: center;
+}
+
+
+header {
+    justify-content: space-between;
+    width: 100%;
+    padding: 1em 8em;
+    background: #161a20;
+    box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+#logo {
+    width: 50px;
+    transition: 0.3s;
+}
+
+#logo:hover {
+    transform: scale(1.2);
+}
+
+nav {
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1em 2em;
+    border: 1px solid transparent;
+    border-radius: 0.3em;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    border: 1px solid #f05454;
+}
+
+section {
+    height: 85vh;
+}
+
+
+footer {
+    background: #161a20;
+    padding: 3em;
+}
+
+.card {
+    border-radius: 20px;
+    padding: 2em;
+    text-align: center;
+}
+
+.gradient-red {
+    background: linear-gradient(155deg, rgba(255, 132, 3, 1) 0%, rgba(255, 0, 175, 1) 100%);
+}
+
+.gradient-blue {
+    background: linear-gradient(45deg, rgba(9, 180, 182, 1) 0%, rgba(25, 219, 190, 1) 100%);
+}
+
+.gradient-purple {
+    background: linear-gradient(45deg, rgba(255, 3, 218, 1) 0%, rgba(94, 154, 241, 1) 69%, rgba(0, 243, 255, 1) 100%);
+}
+
+.gradient-green {
+    background: linear-gradient(45deg, rgba(182, 255, 3, 1) 0%, rgba(7, 249, 238, 1) 100%);
+}
+
+.flex-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+.flex-space-around {
+    justify-content: space-around;
+}
+
+.gap-10 {
+    gap: 10em;
+}
+
+.gap-5 {
+    gap: 5em;
+}
+
+#third-flex {
+    transition: 0.3s;
+    justify-self: stretch;
+}
+
+#third-flex:hover {
+    flex-direction: column;
+}
