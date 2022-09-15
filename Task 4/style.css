@@ -41,6 +41,10 @@ header {
     box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
 }
 
+#home {
+    margin-top: 104px;
+}
+
 #logo {
     width: 50px;
     transition: 0.3s;
@@ -53,7 +57,8 @@ header {
 nav {
     justify-content: space-between;
     align-self: flex-end;
-    gap: 2em
+    gap: 2em;
+    width: max-content;
 }
 
 nav a {
@@ -74,7 +79,6 @@ section {
     height: 85vh;
     flex-wrap: wrap;
     border-style: solid;
-    padding-top: 5em;
 }
 
 
@@ -148,6 +152,7 @@ footer {
 #third-flex {
     transition: 0.3s;
     justify-self: stretch;
+    align-self: flex-end;
 }
 
 #third-flex:hover {
@@ -160,4 +165,8 @@ footer {
 
 .flex-wrap {
     flex-wrap: wrap;
+}
+
+.flex-align-center {
+    align-items: center;
 }
