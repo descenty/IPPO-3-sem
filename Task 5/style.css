@@ -1,0 +1,219 @@
+@font-face {
+    font-family: 'Oswald';
+    src: url('Oswald.ttf')
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    background: #222831;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+}
+
+header,
+nav,
+section,
+.content-container,
+footer {
+    display: flex;
+    align-items: center;
+}
+
+
+header {
+    position: fixed;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1em 8em;
+    background: #161a20;
+    box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+#home {
+    margin-top: 104px;
+}
+
+#logo {
+    width: 50px;
+    transition: 0.3s;
+}
+
+#logo:hover {
+    transform: scale(1.2);
+}
+
+nav {
+    justify-content: space-between;
+    align-self: flex-end;
+    gap: 2em;
+    width: max-content;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 1em 1em;
+    border: 1px solid transparent;
+    border-radius: 0.3em;
+    transition: 0.3s;
+    text-align: center;
+}
+
+nav a:hover {
+    border: 1px solid #f05454;
+}
+
+section {
+    height: 85vh;
+    flex-wrap: wrap;
+    border-style: solid;
+}
+
+
+footer {
+    background: #161a20;
+    padding: 3em;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.card {
+    border-radius: 20px;
+    padding: 1.5em;
+    background-color: #2D3540;
+    width: 300px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.card h1 {
+    font-size: 100px;
+    color: #434951;
+}
+
+.card h2 {
+    font-size: 36px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card img {
+    width: 50%;
+}
+
+.card button {
+    padding: 0.5em 1.5em;
+    border-radius: 50px;
+    background-color: #2196F3;
+    color: white;
+    border-style: none;
+}
+
+.card h3 {
+    color: #F620D7;
+}
+
+.card p {
+    color: rgb(214, 214, 214);
+    font-size: 14px;
+}
+
+.gradient-red {
+    background: linear-gradient(155deg, rgba(255, 132, 3, 1) 0%, rgba(255, 0, 175, 1) 100%);
+}
+
+.gradient-blue {
+    background: linear-gradient(45deg, rgba(9, 180, 182, 1) 0%, rgba(25, 219, 190, 1) 100%);
+}
+
+.gradient-purple {
+    background: linear-gradient(45deg, rgba(255, 3, 218, 1) 0%, rgba(94, 154, 241, 1) 69%, rgba(0, 243, 255, 1) 100%);
+}
+
+.gradient-green {
+    background: linear-gradient(45deg, rgba(182, 255, 3, 1) 0%, rgba(7, 249, 238, 1) 100%);
+}
+
+.flex-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+.flex-space-around {
+    justify-content: space-around;
+}
+
+.self-flex-end {
+    align-self: flex-end;
+}
+
+.gap-10 {
+    gap: 10em;
+}
+
+.gap-5 {
+    gap: 5em;
+}
+
+#third-flex {
+    transition: 0.3s;
+    justify-self: stretch;
+    align-self: flex-end;
+}
+
+#third-flex:hover {
+    flex-direction: column;
+}
+
+#third-flex:hover div {
+    width: 100%;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-align-center {
+    align-items: center;
+}
