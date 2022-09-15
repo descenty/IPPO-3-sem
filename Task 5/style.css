@@ -22,6 +22,10 @@ body {
     gap: 5em;
 }
 
+body section:nth-child(2) {
+    margin-top: 100px;
+}
+
 header,
 nav,
 section,
@@ -95,6 +99,18 @@ footer {
     text-align: center;
 }
 
+.text-gray {
+    color: #8a95a1;
+}
+
+.text-dark-gray {
+    color: #383D46;
+}
+
+.text-purple {
+    color: #9466ea;
+}
+
 .card {
     border-radius: 20px;
     padding: 1.5em;
@@ -103,16 +119,15 @@ footer {
     transition: 0.3s;
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.7em;
 }
 
 .card h1 {
     font-size: 100px;
-    color: #434951;
 }
 
 .card h2 {
-    font-size: 36px;
+    font-size: 42px;
 }
 
 .card:hover {
@@ -126,17 +141,26 @@ footer {
 .card button {
     padding: 0.5em 1.5em;
     border-radius: 50px;
-    background-color: #2196F3;
     color: white;
     border-style: none;
+    width: fit-content;
+    box-shadow: 1px 1px 5px rgb(80, 80, 80);
 }
+
+.background-blue {
+    background-color: #2196F3;
+}
+
+.background-red {
+    background-color: #ed3d3d;
+}
+
 
 .card h3 {
     color: #F620D7;
 }
 
 .card p {
-    color: rgb(214, 214, 214);
     font-size: 14px;
 }
 
@@ -149,8 +173,7 @@ footer {
 }
 
 .gradient-purple {
-    background: linear-gradient(45deg, rgba(255, 3, 218, 1) 0%, rgba(94, 154, 241, 1) 69%, rgba(0, 243, 255, 1) 100%);
-}
+    background: linear-gradient(45deg, rgba(199,106,237,1) 0%, rgba(97,86,242,1) 100%);}
 
 .gradient-green {
     background: linear-gradient(45deg, rgba(182, 255, 3, 1) 0%, rgba(7, 249, 238, 1) 100%);
@@ -214,6 +237,12 @@ footer {
     flex-wrap: wrap;
 }
 
-.flex-align-center {
+.align-items-center {
     align-items: center;
+    text-align: center;
+}
+
+.align-items-right {
+    align-items: flex-end;
+    text-align: right;
 }
