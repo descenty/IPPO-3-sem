@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'Oswald';
-    src: url('Oswald.ttf')
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto&display=swap');
 
 * {
     box-sizing: border-box;
@@ -14,24 +11,21 @@ html {
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Montserrat';
     background: #222831;
     display: flex;
     flex-direction: column;
     gap: 5em;
 }
 
-/* width */
 ::-webkit-scrollbar {
     width: 12px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: #222831;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     border-radius: 30%;
     background: linear-gradient(45deg, rgba(199, 106, 237, 1) 0%, rgba(97, 86, 242, 1) 100%);
@@ -144,6 +138,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 0.7em;
+    box-shadow: 3px 3px 5px rgb(27, 27, 27);
 }
 
 .card h1 {
@@ -151,7 +146,7 @@ footer {
 }
 
 .card h2 {
-    font-size: 42px;
+    font-size: 40px;
 }
 
 .card h2,
@@ -164,7 +159,7 @@ footer {
 
 .card:hover {
     transform: scale(1.1);
-    box-shadow: 1px 1px 10px rgb(67, 66, 66);
+    box-shadow: 1px 1px 1px white;
 }
 
 #text-cards .card img,
@@ -188,6 +183,7 @@ footer {
 
 #goods-cards .card>img {
     transition: 0.3s;
+    filter: drop-shadow(1px 1px 5px black)
 }
 
 #goods-cards .card:hover>div {
@@ -200,12 +196,55 @@ footer {
 }
 
 .card>button,
-.card>div>button {
-    padding: 0.5em 1.5em;
+.card>div>button,
+.banner>div>button {
+    padding: 0.7em 2em;
     border-radius: 50px;
     border-style: none;
     width: fit-content;
     box-shadow: 1px 1px 5px rgb(80, 80, 80);
+}
+
+.banner {
+    width: 800px;
+    height: 450px;
+    border-radius: 20px;
+    padding: 2.5em;
+    transition: 0.3s;
+    box-shadow: 1px 1px 5px rgb(162, 111, 152);
+    background: linear-gradient(180deg, rgba(120, 86, 163, 1) 0%, rgba(175, 158, 223, 1) 100%);
+}
+
+.banner:hover div {
+    display: flex;
+    opacity: 1;
+}
+
+.banner:hover img {
+    width: 500px;
+}
+
+.banner>img {
+    width: 300px;
+    filter: drop-shadow(1px 1px 4px #967EC4);
+    transition: 0.5s;
+}
+
+.banner>div {
+    gap: 0.4em;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.banner>div>p {
+    width: 350px;
+    color: rgb(237, 234, 234);
+    margin-bottom: 20px;
+}
+
+.banner>div>h2 {
+    font-size: 36px;
+    color: white;
 }
 
 .background-blue {
@@ -242,6 +281,7 @@ footer {
 
 .card p {
     font-size: 14px;
+    margin-bottom: 10px;
     color: white;
 }
 
@@ -262,7 +302,6 @@ footer {
 }
 
 .flex-row {
-    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -270,7 +309,6 @@ footer {
 .flex-column {
     display: flex;
     flex-direction: column;
-    height: 85vh;
 }
 
 .flex-center {
@@ -347,6 +385,6 @@ footer {
     gap: 1em;
 }
 
-.color-white {
+.text-white {
     color: white;
 }
