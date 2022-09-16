@@ -16,10 +16,29 @@ html {
 body {
     font-family: sans-serif;
     background: #222831;
-    color: white;
     display: flex;
     flex-direction: column;
     gap: 5em;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #222831;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 30%;
+    background: linear-gradient(45deg, rgba(199, 106, 237, 1) 0%, rgba(97, 86, 242, 1) 100%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, rgba(255, 106, 237, 1) 0%, rgba(150, 86, 255, 1) 100%);
 }
 
 body section:nth-child(2) {
@@ -43,6 +62,10 @@ header {
     padding: 1em 8em;
     background: #161a20;
     box-shadow: 0 5px 20px 5px rgba(0, 0, 0, 0.3);
+}
+
+button {
+    cursor: pointer;
 }
 
 #home {
@@ -82,7 +105,8 @@ nav a:hover {
 section {
     height: 85vh;
     flex-wrap: wrap;
-    border-style: solid;
+    /*border-style: solid;
+    border-color: white;*/
 }
 
 
@@ -130,18 +154,55 @@ footer {
     font-size: 42px;
 }
 
-.card:hover {
-    transform: scale(1.1);
+.card h2,
+h3,
+h4,
+label,
+footer {
+    color: white
 }
 
-.card img {
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 1px 10px rgb(67, 66, 66);
+}
+
+#text-cards .card img,
+#articles .card img {
     width: 50%;
 }
 
-.card button {
+#goods-cards .card img {
+    width: 100%;
+}
+
+#goods-cards .card>div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    opacity: 0.0;
+    transition: 0.3s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#goods-cards .card>img {
+    transition: 0.3s;
+}
+
+#goods-cards .card:hover>div {
+    opacity: 1.0;
+}
+
+#goods-cards .card:hover>img {
+    transform: rotate(25deg) translateY(-50px);
+    filter: drop-shadow(1px 1px 1px white)
+}
+
+.card>button,
+.card>div>button {
     padding: 0.5em 1.5em;
     border-radius: 50px;
-    color: white;
     border-style: none;
     width: fit-content;
     box-shadow: 1px 1px 5px rgb(80, 80, 80);
@@ -155,13 +216,33 @@ footer {
     background-color: #ed3d3d;
 }
 
+.background-white {
+    background-color: white;
+}
 
-.card h3 {
+.background-green {
+    background-color: #97DC47;
+}
+
+.background-black {
+    background-color: black;
+}
+
+.background-pink {
+    background-color: pink;
+}
+
+.background-multicolor {
+    background: linear-gradient(45deg, rgba(3, 0, 255, 1) 0%, rgba(35, 86, 248, 1) 4%, rgba(56, 141, 244, 1) 15%, rgba(91, 235, 237, 1) 36%, rgba(128, 228, 78, 1) 54%, rgba(255, 231, 35, 1) 70%, rgba(239, 116, 18, 1) 84%, rgba(222, 0, 0, 1) 100%);
+}
+
+.text-pink {
     color: #F620D7;
 }
 
 .card p {
     font-size: 14px;
+    color: white;
 }
 
 .gradient-red {
@@ -173,7 +254,8 @@ footer {
 }
 
 .gradient-purple {
-    background: linear-gradient(45deg, rgba(199,106,237,1) 0%, rgba(97,86,242,1) 100%);}
+    background: linear-gradient(45deg, rgba(199, 106, 237, 1) 0%, rgba(97, 86, 242, 1) 100%);
+}
 
 .gradient-green {
     background: linear-gradient(45deg, rgba(182, 255, 3, 1) 0%, rgba(7, 249, 238, 1) 100%);
@@ -245,4 +327,26 @@ footer {
 .align-items-right {
     align-items: flex-end;
     text-align: right;
+}
+
+.color-select {
+    border-radius: 100%;
+    border-style: solid;
+    border-color: white;
+    width: 16px;
+    height: 16px;
+}
+
+.size-select {
+    padding: 4px;
+    border-radius: 20%;
+    border-style: none;
+}
+
+.gap-1 {
+    gap: 1em;
+}
+
+.color-white {
+    color: white;
 }
