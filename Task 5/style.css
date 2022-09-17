@@ -141,6 +141,61 @@ footer {
     box-shadow: 3px 3px 5px rgb(27, 27, 27);
 }
 
+.news-full {
+    background-color: white;
+    border-radius: 20px;
+    padding: 3em;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    box-shadow: 3px 3px 5px rgb(27, 27, 27);
+}
+
+#news-section {
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.news-p {
+    line-height: 20px;
+}
+
+#news-section .card span {
+    text-align: center;
+    cursor: pointer;
+}
+
+.news-full a {
+    cursor: pointer;
+    text-decoration: inherit;
+    color: inherit
+}
+
+
+#news-section .card span:hover {
+    color: #9466ea;
+}
+
+.news {
+    width: 90%;
+    background-color: whitesmoke;
+    gap: 2em;
+    padding: 50px;
+}
+
+.news-img {
+    border-radius: 10%;
+}
+
+.news ul {
+    gap: 1em;
+}
+
+.news h3 {
+    margin-left: 20px;
+}
+
 .card h1 {
     font-size: 100px;
 }
@@ -149,8 +204,7 @@ footer {
     font-size: 40px;
 }
 
-.card h2,
-h3,
+
 h4,
 label,
 footer {
@@ -160,6 +214,24 @@ footer {
 .card:hover {
     transform: scale(1.1);
     box-shadow: 1px 1px 1px white;
+}
+
+.card li {
+    margin-left: 20px;
+    border-radius: 10px;
+    color: black;
+    list-style: none;
+    cursor: pointer;
+}
+
+.card li:hover {
+    color: #D551FA;
+}
+
+.card li a,
+.card span a {
+    text-decoration: inherit;
+    color: inherit
 }
 
 #text-cards .card img,
@@ -282,6 +354,10 @@ footer {
 .card p {
     font-size: 14px;
     margin-bottom: 10px;
+}
+
+#text-cards .card p,
+#articles .card p {
     color: white;
 }
 
@@ -339,6 +415,10 @@ footer {
     gap: 5em;
 }
 
+.gap-2 {
+    gap: 2em;
+}
+
 #third-flex {
     transition: 0.3s;
     justify-self: stretch;
@@ -387,4 +467,8 @@ footer {
 
 .text-white {
     color: white;
+}
+
+.text-black {
+    color: black;
 }

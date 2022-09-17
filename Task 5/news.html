@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Работа со свойствами модуля Flexbox</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="https://cdn-icons-png.flaticon.com/512/3698/3698156.png" alt="Логотип">
+        <nav>
+            <a href="index.html#text-cards">Главная</a>
+            <a href="index.html#articles">Статьи</a>
+            <a href="index.html#goods-cards">Товары</a>
+            <a href="index.html#banner-section">Баннер</a>
+            <a href="#news-section">Новости</a>
+        </nav>
+    </header>
+    <section id="news-section" class="flex-row flex-center gap-2">
+        <div class="card news">
+            <h3>Новости</h3>
+            <ul class="flex-column">
+                <li><a href="news/central-bank.html">ЦБ снизил ключевую ставку до 7,5%</a></li>
+                <li><a href="news/depo.html">Собянин рассказал о создании гастрономического кластера «Депо. Три
+                        вокзала»</a></li>
+                <li><a href="news/rain.html">Москвичей предупредили о дождях до 21 сентября</a></li>
+            </ul>
+        </div>
+        <div class="card background-white">
+            <h3>ЦБ снизил ключевую ставку до 7,5%</h3>
+            <img class="news-img" src="news/images/central-bank.jpg" alt="central-bank">
+            <p class="text-black">Банк России на заседании в пятницу, 16 сентября, уменьшил ключевую ставку с 8% до 7,5%
+                годовых. Это
+                стало шестым снижением подряд после экстренного повышения до 20% в конце февраля. Решение регулятора
+                совпало с прогнозами аналитиков.
+
+                Какое влияние на рынок жилья и ипотеки окажет очередное снижение ключевой, рассказываем вместе с
+                аналитиками и риелторами.
+            </p>
+            <span><a href="news/central-bank.html">Читать</a></span>
+        </div>
+        <div class="card background-white">
+            <h3>Собянин рассказал о создании гастрономического кластера «Депо. Три вокзала»</h3>
+            <img class="news-img" src="news/images/depo.jpg" alt="central-bank">
+            <p class="text-black">Мэр Москвы Сергей Собянин показал проект культурно-рекреационного кластера на
+                территории рядом с крупнейшим транспортным узлом столицы — Казанским, Ленинградским и Ярославским
+                вокзалами.
+            </p>
+            <span><a href="news/depo.html">Читать</a></span>
+        </div>
+        <div class="card background-white">
+            <h3>Москвичей предупредили о дождях до 21 сентября</h3>
+            <img class="news-img" src="news/images/rain.jpg" alt="central-bank">
+            <p class="text-black">Руководитель прогностического центра «Метео» Александр Шувалов в разговоре с «Вечерней
+                Москвой» заявил, что в начале следующей недели в столице ожидаются сильные дожди.
+
+                Он отметил, что в субботу в Москве будет теплая погода, однако уже со второй половины воскресенья
+                начнутся дожди и будут усиливаться — особенно в ночь на понедельник.
+            </p>
+            <span><a href="news/rain.html">Читать</a></span>
+        </div>
+    </section>
+</body>
+
+</html>
