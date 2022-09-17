@@ -152,6 +152,11 @@ footer {
     box-shadow: 3px 3px 5px rgb(27, 27, 27);
 }
 
+.card a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
 #news-section {
     flex-wrap: wrap;
     height: 100vh;
@@ -173,7 +178,7 @@ footer {
 }
 
 
-#news-section .card span:hover {
+.card a:hover {
     color: #9466ea;
 }
 
