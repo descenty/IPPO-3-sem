@@ -170,3 +170,11 @@ footer {
 .flex-align-center {
     align-items: center;
 }
+
+#section-7 div {
+    flex-grow: 1;
+}
+
+#section-7 div:nth-child(1) {
+    flex-grow: 2;
+}
