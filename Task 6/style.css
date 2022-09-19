@@ -623,6 +623,7 @@ footer {
     margin-top: 80px;
     counter-reset: step-counter;
     transform: scale(0);
+    opacity: 0;
     transition: 0.3s;
 }
 
@@ -712,4 +713,5 @@ footer {
 
 .notifications-panel:hover .notifications-items {
     transform: scale(1);
+    opacity: 1;
 }
