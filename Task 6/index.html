@@ -1,54 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Работа со свойствами модуля Flexbox</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <img id="logo" src="https://cdn-icons-png.flaticon.com/512/3698/3698156.png" alt="Логотип">
-        <nav>
-            <a href="#text-cards">Главная</a>
-            <a href="#articles">Статьи</a>
-            <a href="#goods-cards">Товары</a>
-            <a href="#banner-section">Баннер</a>
-            <a href="news.html">Новости</a>
-        </nav>
+      <img
+        id="logo"
+        src="https://cdn-icons-png.flaticon.com/512/3698/3698156.png"
+        alt="Логотип"
+      />
+      <nav>
+        <a href="#text-cards">Главная</a>
+        <a href="#articles">Статьи</a>
+        <a href="#goods-cards">Товары</a>
+        <a href="#banner-section">Баннер</a>
+        <a href="news.html">Новости</a>
+      </nav>
     </header>
     <section id="loader-section" class="flex-row flex-center gap-1">
-        <span class="text-white">Загрузка</span>
-        <div class="lds-ripple">
-            <div></div>
-            <div></div>
-        </div>
+      <span class="text-white">Загрузка</span>
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
     </section>
     <section id="buttons-section" class="flex-column flex-center gap-2">
-        <div class="flex-row flex-center gap-2">
-            <button class="custom-button">Left</button>
-            <button class="custom-button">Top</button>
-            <button class="custom-button">Right</button>
-        </div>
-        <button class="custom-button">Bottom</button>
+      <div class="flex-row flex-center gap-2">
+        <button class="custom-button">Left</button>
+        <button class="custom-button">Top</button>
+        <button class="custom-button">Right</button>
+      </div>
+      <button class="custom-button">Bottom</button>
     </section>
     <section id="notifications-section" class="flex-row flex-center">
-        <div class="notifications-panel">
-            <div class="notifications-header">
-                <img src="bell.png" alt="notifications" class="notifications-button">
-                <span class="flex-row flex-center">4</span>
-            </div>
-            <ol class="notifications-items">
-                <li>List Item 1</li>
-                <li>List Item 2</li>
-                <li>List Item 3</li>
-                <li>List Item 4</li>
-            </ol>
+      <div class="notifications-panel">
+        <div class="notifications-header">
+          <img
+            src="bell.png"
+            alt="notifications"
+            class="notifications-button"
+          />
+          <span class="flex-row flex-center">4</span>
         </div>
+        <ol class="notifications-items">
+          <li>List Item 1</li>
+          <li>List Item 2</li>
+          <li>List Item 3</li>
+          <li>List Item 4</li>
+        </ol>
+      </div>
     </section>
-</body>
-
+    <section id="color-cards-section" class="flex-row flex-space-around">
+      <div class="color-card">
+        <h1>01</h1>
+        <div class="hover-color-card">
+          <img src="moskva-reka.jpg" alt="" />
+          <div class="overlay-gradient gradient-green"></div>
+          <div class="card-content">
+            <h3>Заголовок</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam,
+            </p>
+            <button>Подробнее</button>
+          </div>
+        </div>
+      </div>
+      <div class="color-card">
+        <h1>02</h1>
+        <div class="hover-color-card">
+          <img src="pokrovskaya.jpg" alt="" />
+        </div>
+      </div>
+      <div class="color-card">
+        <h1>03</h1>
+        <div class="hover-color-card">
+          <img src="forest-river.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
