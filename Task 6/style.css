@@ -643,7 +643,6 @@ footer {
 .notifications-items li:hover {
     background-color: #B43FFD;
     color: white;
-    font-weight: bold;
     text-indent: 80px;
 }
 
