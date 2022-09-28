@@ -1635,3 +1635,109 @@ footer {
 .color-blur-card:nth-child(3) .content a {
   background: #bb02ff;
 }
+
+#goods-section {
+  display: flex;
+  justify-content: space-around
+}
+
+.good-card {
+  background-color: #122936;
+  width: 200px;
+  height: 280px;
+  color: white;
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.good-card .content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  padding-bottom: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.good-card .content div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.good-card::before {
+  content: '';
+  background-color: #2196F3;
+  width: 300%;
+  height: 100%;
+  margin-top: -100px;
+  margin-left: -400px;
+  transform: rotate(-15deg);
+  transition: 0.5s;
+}
+
+.good-card::after {
+  content: 'ТОП-1';
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 80px;
+  margin-left: -20px;
+  color: #102530;
+  font-weight: bolder;
+  bottom: 0;
+  z-index: 0;
+}
+
+.good-card img {
+  width: 90%;
+  margin-bottom: 15px;
+  transition: 0.5s;
+}
+
+.good-card h6 {
+  font-weight: normal;
+  font-size: 11px;
+}
+
+.good-card span {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.good-card:hover img {
+  width: 80%;
+}
+
+.good-card button {
+  margin-top: 10px;
+  background-color: #2196F3;
+  color: white;
+  width: max-content;
+  text-transform: uppercase;
+  font-size: 11px;
+  padding: 7px 20px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: 0.5s;
+  border-style: none;
+}
+
+.good-card:hover button {
+  opacity: 1;
+  margin-bottom: 50px;
+}
+
+.good-card:hover::before {
+  transform: rotate(30deg);
+  margin-top: -200px;
+  margin-right: -170px;
+  margin-left: -100px;
+}
