@@ -1533,11 +1533,13 @@ footer {
 
 #color-blur-cards-section {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-content: center;
   flex-wrap: wrap;
   background: linear-gradient(45deg, #ffaf00, #bb02ff);
   width: 100vw;
-  height: 100vh;
+  height: 300vh;
+  gap: 5vw;
 }
 
 .color-blur-card {
@@ -1565,8 +1567,8 @@ footer {
   position: absolute;
   content: '';
   width: 3000px;
-  height: 1000px;
-  margin-top: -250px;
+  height: 2000px;
+  margin-top: -1000px;
   margin-left: -1500px;
   backdrop-filter: blur(0px);
   z-index: -1;
