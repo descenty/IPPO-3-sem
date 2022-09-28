@@ -18,7 +18,7 @@ body {
   gap: 5em;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 12px;
 }
 
@@ -41,7 +41,7 @@ body {
     rgba(255, 106, 237, 1) 0%,
     rgba(150, 86, 255, 1) 100%
   );
-}
+} */
 
 body section:nth-child(2) {
   margin-top: 100px;
@@ -1161,7 +1161,7 @@ footer {
 .advertisment-box::before {
   position: absolute;
   content: "";
-  background: url("kaluga.jfif");
+  background: var(--hover-image);
   background-size: 110%;
   width: 100vw;
   height: 100vh;
@@ -1176,7 +1176,11 @@ footer {
 
 .advertisment-box::after {
   content: "";
-  background: rgb(20, 20, 20);
+  background: linear-gradient(
+    45deg,
+    rgba(199, 106, 237, 1) 0%,
+    rgba(97, 86, 242, 1) 100%
+  );
   position: absolute;
   width: 40vw;
   max-width: 380px;
@@ -1207,7 +1211,7 @@ footer {
 
 .advertisment-box:hover div {
   transform: scale(2);
-  color: black;
+  color: var(--text-color);
 }
 
 .advertisment-box:hover img {
@@ -1237,7 +1241,6 @@ footer {
 
 .advertisment-box div {
   color: white;
-  font-size: min(1.2vw, 14px);
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -1245,8 +1248,12 @@ footer {
   z-index: 1;
 }
 
+.advertisment-box h3 {
+  font-size: 85%;
+}
+
 .advertisment-box p {
-  font-size: min(1.2vw, 13px);
+  font-size: 79%;
 }
 
 .advertisment-box h3 {
