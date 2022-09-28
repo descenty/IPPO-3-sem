@@ -1061,7 +1061,6 @@ footer {
   animation-delay: -2s;
 }
 
-
 .glass-box:hover span::before {
   top: -2vw;
   left: 4vw;
@@ -1132,31 +1131,128 @@ footer {
   text-align: center;
 }
 
+@media (max-width: 1250px) {
+  #advertisment-section {
+    flex-direction: column;
+  }
+}
+
 #advertisment-section {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 3vw;
+  height: 100vh;
+  flex-wrap: wrap;
 }
 
 .advertisment-box {
   width: 40vw;
-  height: 20vw;
+  max-width: 380px;
+  height: 17vw;
+  max-height: 170px;
   display: flex;
-  padding: 2vw;
-  gap: 1.5vw;
+  padding: 15px;
+  gap: 10px;
+  transition: 1s;
+}
+
+.advertisment-box::before {
+  position: absolute;
+  content: "";
+  background: url("kaluga.jfif");
+  background-size: 110%;
+  width: 100vw;
+  height: 100vh;
+  top: 130vh;
+  box-shadow: 1px 1px 10px rgb(49, 49, 49);
+  z-index: -1;
+  left: 0;
   border-radius: 10px;
+  opacity: 0;
+  transition: 2s;
+}
+
+.advertisment-box::after {
+  content: "";
+  background: rgb(20, 20, 20);
+  position: absolute;
+  width: 40vw;
+  max-width: 380px;
+  height: 17vw;
+  max-height: 170px;
+  z-index: 0;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 20px;
+  transition: 1s;
+}
+
+.advertisment-box:hover {
+  margin-right: 250px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.advertisment-box:hover::after {
+  opacity: 0;
+}
+
+.advertisment-box:hover p {
+  font-weight: bold;
+  backdrop-filter: blur(8px) contrast(70%) brightness(140%);
+  padding: 10px;
+}
+
+.advertisment-box:hover div {
+  transform: scale(2);
+  color: black;
+}
+
+.advertisment-box:hover img {
+  opacity: 0;
+}
+
+.advertisment-box:hover h3 {
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  background-color: black;
+  width: 20vw;
+  padding-left: 2px;
+}
+
+.advertisment-box:hover::before {
+  opacity: 1;
+  background-size: 100vw;
 }
 
 .advertisment-box img {
-  width: 100px;
-  height: 80px;
+  width: min(12vw, 120px);
+  height: min(10vw, 100px);
   border-radius: 10px;
+  transition: 1s;
+  z-index: 1;
 }
 
 .advertisment-box div {
   color: white;
-  font-size: 1.7vw;
+  font-size: min(1.2vw, 14px);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: 1s;
+  z-index: 1;
 }
 
+.advertisment-box p {
+  font-size: min(1.2vw, 13px);
+}
+
+.advertisment-box h3 {
+  transition: 1s;
+  width: 10vw;
+}
 
 .social-button {
   width: 5vw;
@@ -1164,7 +1260,7 @@ footer {
 }
 
 .social-button::before {
-  content: '';
+  content: "";
   width: 5vw;
   height: 5vw;
   display: block;
