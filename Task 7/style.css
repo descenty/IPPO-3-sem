@@ -1554,7 +1554,7 @@ footer {
 }
 
 .color-blur-card::after {
-  content: '';
+  content: "";
   background-color: white;
   position: absolute;
   width: 100%;
@@ -1565,7 +1565,7 @@ footer {
 
 .color-blur-card::before {
   position: absolute;
-  content: '';
+  content: "";
   width: 3000px;
   height: 2000px;
   margin-top: -1000px;
@@ -1677,8 +1677,8 @@ footer {
 }
 
 .good-card::before {
-  content: '';
-  background-color: #2196F3;
+  content: "";
+  background-color: #2196f3;
   width: 300%;
   height: 100%;
   margin-top: -100px;
@@ -1688,7 +1688,7 @@ footer {
 }
 
 .good-card::after {
-  content: 'ТОП-1';
+  content: "ТОП-1";
   position: absolute;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 80px;
@@ -1721,7 +1721,7 @@ footer {
 
 .good-card button {
   margin-top: 10px;
-  background-color: #2196F3;
+  background-color: #2196f3;
   color: white;
   width: max-content;
   text-transform: uppercase;
@@ -1750,6 +1750,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+  height: 200vh;
 }
 
 #rays-cards-section:hover .rays-card {
@@ -1759,7 +1760,7 @@ footer {
 #rays-cards-section .rays-card:hover {
   opacity: 1;
 }
- 
+
 .rays-card {
   position: relative;
   width: 300px;
@@ -1768,14 +1769,14 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px; 
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  margin: 30px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
   transition: 0.5s;
 }
 
 .rays-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 2px;
   left: 2px;
@@ -1858,7 +1859,7 @@ footer {
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(to right, trasparent, #1779ff);
+  background: linear-gradient(to right, transparent, #1779ff);
   animation: animate1 2s linear infinite;
 }
 
@@ -1877,7 +1878,7 @@ footer {
   right: 0;
   width: 3px;
   height: 100%;
-  background: linear-gradient(to bottom, trasparent, #1779ff);
+  background: linear-gradient(to bottom, transparent, #1779ff);
   animation: animate2 2s linear infinite;
   animation-delay: 1s;
 }
@@ -1897,7 +1898,7 @@ footer {
   left: 0;
   width: 100%;
   height: 3px;
-  background: linear-gradient(to left, trasparent, #1779ff);
+  background: linear-gradient(to left, transparent, #1779ff);
   animation: animate3 2s linear infinite;
 }
 
@@ -1910,14 +1911,15 @@ footer {
   }
 }
 
-.rays-card span:nth-child(1) {
+.rays-card span:nth-child(4) {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(to top, trasparent, #1779ff);
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #1779ff);
   animation: animate4 2s linear infinite;
+  animation-delay: 1s;
 }
 
 @keyframes animate4 {
@@ -1927,4 +1929,85 @@ footer {
   100% {
     transform: translateY(-100%);
   }
+}
+
+#people-cards-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  gap: 3vw;
+  height: 200vh;
+}
+
+.people-card {
+  width: 260px;
+  height: 347px;
+  border-radius: 15px;
+  background-color: #1d3548;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 1px 1px 5px rgb(28, 28, 28);
+}
+
+.people-card::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 30%;
+  background-color: #2196f3;
+}
+
+.people-card span {
+  font-size: 12px;
+  color: #4fc7ff;
+  margin-bottom: 10px;
+}
+
+.people-card > img {
+  height: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.people-card .social-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+}
+
+.people-card .social-buttons > div {
+  background-color: #294d69;
+}
+
+.people-card:hover>img {
+  margin-top: 30px;
+  height: 55%;
+}
+
+.social-button-inline {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  background-color: #222831;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.social-button-inline img {
+  position: absolute;
+  width: 20px;
+  filter: invert(1);
 }
