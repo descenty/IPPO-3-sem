@@ -68,7 +68,7 @@ body {
 }
 
 #second-grid-section > div > img {
-  width: 5vw
+  width: 5vw;
 }
 
 #second-grid-section > div:hover {
@@ -234,9 +234,123 @@ body {
 }
 
 #fourth-grid-section > div:nth-child(2) > .card-footer > div {
-  background-color: #E14306;
+  background-color: #e14306;
 }
 
 #fourth-grid-section > div:nth-child(3) > .card-footer > div {
-  background-color: #03A439;
+  background-color: #03a439;
+}
+
+#calendar-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calendar {
+  width: 320px;
+  height: 500px;
+  position: relative;
+}
+
+.calendar .day-data {
+  position: absolute;
+  color: white;
+  padding: 20px;
+  top: 0;
+}
+
+.calendar > img {
+  width: 100%;
+  filter: brightness(70%);
+}
+
+.calendar-days {
+  background-color: white;
+  height: 200px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.calendar-days > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#web-grid-section {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  width: 100%;
+  height: 350px;
+  gap: 9px;
+  padding: 9px;
+}
+
+#web-grid-section > div {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+#web-grid-section > div > span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+  background: linear-gradient(to top, black, transparent);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#web-grid-section > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 1s;
+}
+
+#web-grid-section > div:nth-child(1) {
+  grid-row: 2 span;
+}
+
+#web-grid-section > div:nth-child(3) {
+  grid-column: 2 span;
+}
+
+#web-grid-section > div:nth-child(5) {
+  grid-row: 2 span;
+}
+
+#web-grid-section > div:nth-child(6) > img {
+  transform: scale(1.4);
+}
+
+#web-grid-section > div:nth-child(6):hover > img {
+  transform: scale(1.7);
+}
+
+#web-grid-section > div:nth-child(7) {
+  grid-column: 2 span;
+}
+
+#web-grid-section > div:hover > img {
+  transform: scale(1.3);
+}
+
+#web-grid-section > div:hover > span {
+  opacity: 1;
 }
