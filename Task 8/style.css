@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat";
+  background: #222831;
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+}
+
+#first-grid-section,
+#second-grid-section {
+  display: grid;
+  width: 100%;
+  height: 50vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 10px;
+  gap: 2px;
+}
+
+#first-grid-section > div {
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+#first-grid-section > div:hover {
+  color: white;
+  font-size: 32px;
+  background-color: #2196f3;
+}
+
+#second-grid-section {
+  gap: 10px;
+  height: 80vh;
+}
+
+#second-grid-section > div {
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  font-size: 13px;
+  gap: 10px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#second-grid-section > div > img {
+  width: 70px;
+}
+
+#second-grid-section > div:hover {
+  background-color: #e91e63;
+}
+
+#third-grid-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+#third-grid-section > div {
+  background-color: black;
+  color: white;
+  display: grid;
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  height: 285px;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 5px;
+}
+
+#third-grid-section > div > p {
+  font-size: 14px;
+}
+
+#third-grid-section > div > h3 {
+  align-self: flex-end;
+  text-transform: uppercase;
+}
+
+#third-grid-section > div > h1 {
+  font-size: 80px;
+  color: white;
+  grid-row: span 3;
+  opacity: 0.5;
+}
+
+#third-grid-section > div:nth-child(1) {
+  background: linear-gradient(
+    45deg,
+    rgba(7, 115, 186, 1) 0%,
+    rgba(97, 230, 253, 1) 100%
+  );
+}
+
+#third-grid-section > div:nth-child(2) {
+  background: linear-gradient(
+    45deg,
+    rgba(233, 32, 104, 1) 0%,
+    rgba(237, 82, 248, 1) 100%
+  );
+}
+
+#third-grid-section > div:nth-child(3) {
+  background: linear-gradient(
+    45deg,
+    rgba(7, 115, 55, 1) 0%,
+    rgba(0, 248, 111, 1) 100%
+  );
+}
+
+#third-grid-section > div:nth-child(4) {
+  background: linear-gradient(
+    45deg,
+    rgba(240, 94, 77, 1) 0%,
+    rgba(243, 187, 49, 1) 100%
+  );
+}
