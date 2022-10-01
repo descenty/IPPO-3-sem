@@ -38,6 +38,7 @@ body {
   font-size: 24px;
   font-weight: bold;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 #first-grid-section > div:hover {
@@ -48,7 +49,7 @@ body {
 
 #second-grid-section {
   gap: 10px;
-  height: 80vh;
+  height: 100vh;
 }
 
 #second-grid-section > div {
@@ -60,14 +61,14 @@ body {
   justify-content: center;
   align-items: center;
   transition: 0.5s;
-  font-size: 13px;
+  font-size: max(9px, 1.1vw);
   gap: 10px;
   padding: 20px;
   cursor: pointer;
 }
 
 #second-grid-section > div > img {
-  width: 70px;
+  width: 5vw
 }
 
 #second-grid-section > div:hover {
@@ -79,6 +80,18 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
+}
+
+@media (max-width: 900px) {
+  #third-grid-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 710px) {
+  #third-grid-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 #third-grid-section > div {
@@ -139,4 +152,91 @@ body {
     rgba(240, 94, 77, 1) 0%,
     rgba(243, 187, 49, 1) 100%
   );
+}
+
+#fourth-grid-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  padding: 20px;
+  justify-items: center;
+}
+
+@media (max-width: 880px) {
+  #fourth-grid-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #fourth-grid-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+#fourth-grid-section > div {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 250px;
+  transition: 0.5s;
+}
+
+#fourth-grid-section > div:hover {
+  transform: scale(1.1);
+}
+
+#fourth-grid-section > div > .content > span {
+  font-size: 12px;
+  color: #ff076e;
+  font-weight: bold;
+}
+
+#fourth-grid-section > div > .content {
+  grid-row: span 3;
+  text-align: center;
+  padding-inline: 5px;
+}
+
+#fourth-grid-section > div > .content > p {
+  font-size: 13px;
+}
+
+#fourth-grid-section > div > img {
+  width: 100%;
+  grid-row: span 3;
+}
+
+#fourth-grid-section > div > .card-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(63, 63, 63);
+  gap: 1px;
+  color: white;
+}
+
+#fourth-grid-section > div > .card-footer > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+#fourth-grid-section > div > .card-footer > div > span {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+#fourth-grid-section > div:nth-child(1) > .card-footer > div {
+  background-color: #ff076e;
+}
+
+#fourth-grid-section > div:nth-child(2) > .card-footer > div {
+  background-color: #E14306;
+}
+
+#fourth-grid-section > div:nth-child(3) > .card-footer > div {
+  background-color: #03A439;
 }
