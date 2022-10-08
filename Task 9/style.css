@@ -1,10 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap");
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
+}
+
+.search-div {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-div i {
+  position: absolute;
+  right: 10;
+  font-size: 14px;
+  color: gray
 }
 
 a {
@@ -29,13 +43,6 @@ header input {
   text-indent: 4px;
 }
 
-header input::after {
-  content: 'sdsd';
-  background-color: red;
-  right: 0;
-  color: red;
-  top: 0;
-}
 
 header h2 {
   line-height: 22px;
