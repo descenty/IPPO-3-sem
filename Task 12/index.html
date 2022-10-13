@@ -1,14 +1,13 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Взаимодействие с объектами DOM</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- <section>
         <h1 id="emoji-switch" style="font-size: 100px; cursor: pointer; user-select: none;">🙈</h1>
         <script>
@@ -19,69 +18,156 @@
             }
         </script>
     </section> -->
-    <section>
-        <div id="friends">
-            <h2>Друзья</h2>
-            <div id="friendsGrid">
-                <div>
-                    <div>
-                        <h3>Андрей</h3>
-                        <span>18</span>
-                        <hr>
-                    </div>
-                    <span>Гитара</span>
-                </div>
-                <div>
-                    <div>
-                        <h3>Андрей</h3>
-                        <span>18</span>
-                        <hr>
-                    </div>
-                    <span>Гитара</span>
-                </div>
-                <div>
-                    <div>
-                        <h3>Андрей</h3>
-                        <span>18</span>
-                        <hr>
-                    </div>
-                    <span>Гитара</span>
-                </div>
-                <div>
-                    <div>
-                        <h3>Андрей</h3>
-                        <span>18</span>
-                        <hr>
-                    </div>
-                    <span>Гитара</span>
-                </div>
+    <!-- <section>
+      <div id="friends">
+        <h2>Друзья</h2>
+        <div id="friends-grid">
+          <div>
+            <div class="overlay-data">
+              <p>Маша отмечает 30-й день рождения</p>
             </div>
+            <div>
+              <h3>Андрей</h3>
+              <span>18 лет</span>
+            </div>
+            <span>Гитара</span>
+          </div>
         </div>
-        <script>
-            const users = [
-                {
-                    name: 'Андрей',
-                    age: 20,
-                    hobby: 'Гитара'
-                },
-                {
-                    name: 'Андрей',
-                    age: 20,
-                    hobby: 'Гитара'
-                },
-                {
-                    name: 'Андрей',
-                    age: 20,
-                    hobby: 'Гитара'
-                },
-                {
-                    name: 'Андрей',
-                    age: 20,
-                    hobby: 'Гитара'
-                }
-            ]
-        </script>
-    </section>
-</body>
+      </div>
+      <script>
+        const friends = [
+          {
+            name: "Игорь",
+            age: 20,
+            hobby: "Футбол",
+          },
+          {
+            name: "Павел",
+            age: 19,
+            hobby: "История",
+          },
+          {
+            name: "Владимир",
+            age: 20,
+            hobby: "Программирование",
+          },
+          {
+            name: "Даша",
+            age: 20,
+            hobby: "Гитара",
+          },
+        ];
+        let friendsGrid = document.getElementById("friends-grid");
+        friends.map((friend) => {
+          let friendElement = Object.assign(document.createElement("div"), {
+            innerHTML:
+              '<div class="overlay-data"><p>{name} отмечает {age}-й день рождения</p></div><div><h3>{name}</h3><span class="age-span">{age} лет</span></div><span class="hobby-span">{hobby}</span>',
+          });
+          friendElement.querySelector(
+            ".overlay-data p"
+          ).innerHTML = `${friend.name} отмечает ${friend.age}-й день рождения`;
+          friendElement.querySelector("h3").innerHTML = friend.name;
+          friendElement.querySelector(".age-span").innerHTML = friend.age;
+          friendElement.querySelector(".hobby-span").innerHTML = friend.hobby;
+          friendsGrid.appendChild(friendElement);
+        });
+      </script>
+    </section> -->
+    <!-- <section id="cards-section">
+      <div class="card">
+        <img src="cloud.png" alt="cloud" />
+        <h3>Заголовок 1</h3>
+        <div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero
+            dolorum, soluta explicabo deleniti quas dolore pariatur accusantium
+            expedita cum, ratione delectus natus porro quia corrupti totam
+            consectetur nobis vel ex iusto, id odio. Quisquam officia sed facere
+            magni. Aut neque maxime repellendus accusamus odio id eum non,
+            consequuntur nisi harum voluptates dolores ex unde! Vero numquam,
+            nesciunt molestias dolorum deserunt sapiente doloribus vel iste quas
+            dolores nam quis consequuntur. Quas beatae tempora harum odit
+            recusandae.
+          </p>
+        </div>
+        <button onclick="openCard(0)">Подробнее</button>
+      </div>
+      <div class="card">
+        <img src="coding-language.png" alt="coding-language" />
+        <h3>Заголовок 1</h3>
+        <div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero
+            dolorum, soluta explicabo deleniti quas dolore pariatur accusantium
+            expedita cum, ratione delectus natus porro quia corrupti totam
+            consectetur nobis vel ex iusto, id odio. Quisquam officia sed facere
+            magni. Aut neque maxime repellendus accusamus odio id eum non,
+            consequuntur nisi harum voluptates dolores ex unde! Vero numquam,
+            nesciunt molestias dolorum deserunt sapiente doloribus vel iste quas
+            dolores nam quis consequuntur. Quas beatae tempora harum odit
+            recusandae.
+          </p>
+        </div>
+        <button onclick="openCard(1)">Подробнее</button>
+      </div>
+      <div class="card">
+        <img src="desktop.png" alt="desktop" />
+        <h3>Заголовок 1</h3>
+        <div>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero
+            dolorum, soluta explicabo deleniti quas dolore pariatur accusantium
+            expedita cum, ratione delectus natus porro quia corrupti totam
+            consectetur nobis vel ex iusto, id odio. Quisquam officia sed facere
+            magni. Aut neque maxime repellendus accusamus odio id eum non,
+            consequuntur nisi harum voluptates dolores ex unde! Vero numquam,
+            nesciunt molestias dolorum deserunt sapiente doloribus vel iste quas
+            dolores nam quis consequuntur. Quas beatae tempora harum odit
+            recusandae.
+          </p>
+        </div>
+        <button onclick="openCard(2)">Подробнее</button>
+      </div>
+      <script>
+        function openCard(index) {
+          let card = document.getElementsByClassName("card")[index];
+          let textDiv = card.getElementsByTagName("div")[0];
+          let closed = textDiv.style.height != "280px";
+          textDiv.style.height = closed ? "280px" : "200px";
+          card.style.setProperty("--color", closed ? "#FF3B7E" : "#17E78C");
+          card.style.setProperty(
+            "--gradient",
+            closed
+              ? "none"
+              : "linear-gradient(180deg,rgba(63, 63, 63, 0) 50%,rgba(63, 63, 63, 1) 100%)"
+          );
+          let openButton = (card.getElementsByTagName("button")[0].style.color =
+            closed ? "white" : "black");
+        }
+      </script>
+    </section> -->
+    <section>
+      <nav>
+        <div id="marker"></div>
+        <a href="#">Главная</a>
+        <a href="#">Раздел 1</a>
+        <a href="#">Раздел 2</a>
+        <a href="#">Раздел 3</a>
+        <a href="#">Раздел 4</a>
+      </nav>
+      <script>
+        let marker = document.querySelector("#marker");
+        let item = document.querySelectorAll("nav a");
 
+        function indicator(e) {
+          marker.style.left = e.offsetLeft + "px";
+          marker.style.width = e.offsetWidth + "px";
+        }
+
+        item.forEach((link) => {
+          link.onclick = (e) => indicator(e.target);
+        });
+      </script>
+    </section>
+  </body>
 </html>
