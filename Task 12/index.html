@@ -146,7 +146,7 @@
         }
       </script>
     </section> -->
-    <section>
+    <!-- <section>
       <nav>
         <div id="marker"></div>
         <a href="#">Главная</a>
@@ -167,6 +167,48 @@
         item.forEach((link) => {
           link.onclick = (e) => indicator(e.target);
         });
+      </script>
+    </section> -->
+    <!-- <section></section> -->
+    <!-- <section id="modal-section">
+      <button onclick="toggleModal()">Показать окно</button>
+      <div class="modal-window">
+        <div>
+          <div>
+            <span>Уведомление</span>
+            <i class="fi fi-br-cross" onclick="toggleModal()"></i>
+          </div>
+          <i class="fi fi-ss-camera"></i>
+        </div>
+        <div>
+          <h2>Заголовок 1</h2>
+          <p>Создайте простое модальное окно, используя HTML, CSS и JS</p>
+          <button onclick="toggleModal()">Закрыть</button>
+        </div>
+      </div>
+      <script>
+        let modalWindow = document.querySelector(".modal-window");
+        let i = 0;
+        function toggleModal() {
+          modalWindow.style.display = i++ % 2 == 0 ? "none" : "flex";
+        }
+      </script>
+    </section> -->
+    <section id="input-section">
+      <div>
+        <span>@</span>
+        <input
+          type="text"
+          placeholder="username"
+          onchange="inputChange()"
+          maxlength="16"
+        />
+        <span class="char-counter">16</span>
+      </div>
+      <script>
+        let charCounter = document.querySelector(".char-counter");
+        let input = document.querySelector("#input-section input");
+        input.oninput = () => (charCounter.innerHTML = 16 - input.value.length);
       </script>
     </section>
   </body>
