@@ -6,38 +6,31 @@
     <link rel="stylesheet" href="style.css" />
     <title>Взаимодействие с объектами DOM</title>
   </head>
-
   <body>
-    <!-- <section>
-        <h1 id="emoji-switch" style="font-size: 100px; cursor: pointer; user-select: none;">🙈</h1>
-        <script>
-            let i = 0;
-            let emojiSwitch = document.getElementById('emoji-switch')
-            emojiSwitch.onclick = () => {
-                emojiSwitch.innerText = i++ % 2 == 0 ? '🙉' : '🙈'
-            }
-        </script>
-    </section> -->
-    <!-- <section>
+    <section>
+      <h1
+        id="emoji-switch"
+        style="font-size: 100px; cursor: pointer; user-select: none"
+      >
+        🙈
+      </h1>
+      <script>
+        let emojiToggle = false;
+        let emojiSwitch = document.getElementById("emoji-switch");
+        emojiSwitch.onclick = () => {
+          emojiSwitch.innerText = (emojiToggle = !emojiToggle) ? "🙉" : "🙈";
+        };
+      </script>
+    </section>
+    <section>
       <div id="friends">
         <h2>Друзья</h2>
-        <div id="friends-grid">
-          <div>
-            <div class="overlay-data">
-              <p>Маша отмечает 30-й день рождения</p>
-            </div>
-            <div>
-              <h3>Андрей</h3>
-              <span>18 лет</span>
-            </div>
-            <span>Гитара</span>
-          </div>
-        </div>
+        <div id="friends-grid"></div>
       </div>
       <script>
         const friends = [
           {
-            name: "Игорь",
+            name: "Максим",
             age: 20,
             hobby: "Футбол",
           },
@@ -72,8 +65,8 @@
           friendsGrid.appendChild(friendElement);
         });
       </script>
-    </section> -->
-    <!-- <section id="cards-section">
+    </section>
+    <section id="cards-section">
       <div class="card">
         <img src="cloud.png" alt="cloud" />
         <h3>Заголовок 1</h3>
@@ -145,15 +138,15 @@
             closed ? "white" : "black");
         }
       </script>
-    </section> -->
-    <!-- <section>
+    </section>
+    <section id="nav-section">
       <nav>
         <div id="marker"></div>
-        <a href="#">Главная</a>
-        <a href="#">Раздел 1</a>
-        <a href="#">Раздел 2</a>
-        <a href="#">Раздел 3</a>
-        <a href="#">Раздел 4</a>
+        <a href="#nav-section">Главная</a>
+        <a href="#nav-section">Раздел 1</a>
+        <a href="#nav-section">Раздел 2</a>
+        <a href="#nav-section">Раздел 3</a>
+        <a href="#nav-section">Раздел 4</a>
       </nav>
       <script>
         let marker = document.querySelector("#marker");
@@ -168,9 +161,55 @@
           link.onclick = (e) => indicator(e.target);
         });
       </script>
-    </section> -->
-    <!-- <section></section> -->
-    <!-- <section id="modal-section">
+    </section>
+    <section>
+      <div class="navigation">
+        <ul>
+          <li class="list">
+            <a href="#">
+              <i class="fi fi-rr-home"></i>
+              <span class="text">Главная</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#">
+              <i class="fi fi-rr-user"></i>
+              <span class="text">Профиль</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#">
+              <i class="fi fi-rr-comments"></i>
+              <span class="text">Сообщения</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#">
+              <i class="fi fi-rr-info"></i>
+              <span class="text">Помощь</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#">
+              <i class="fi fi-rr-settings"></i>
+              <span class="text">Настройки</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </div>
+      <script>
+        let list = document.querySelectorAll(".list");
+        function setActiveClass() {
+          list.forEach((item) => item.classList.remove("active"));
+          this.classList.add("active");
+        }
+        list.forEach((item) =>
+          item.addEventListener("mouseover", setActiveClass)
+        );
+      </script>
+    </section>
+    <section id="modal-section">
       <button onclick="toggleModal()">Показать окно</button>
       <div class="modal-window">
         <div>
@@ -190,19 +229,54 @@
         let modalWindow = document.querySelector(".modal-window");
         let i = 0;
         function toggleModal() {
-          modalWindow.style.display = i++ % 2 == 0 ? "none" : "flex";
+          modalWindow.style.display = i++ % 2 == 0 ? "flex" : "none";
         }
       </script>
-    </section> -->
+    </section>
+    <section>
+      <button class="effect-button">
+        Click
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <script>
+        let effectButton = document.querySelector(".effect-button");
+        let spans = document.querySelectorAll("span");
+        effectButton.onclick = () => {
+          spans.forEach((span) => span.classList.add("anim"));
+          setTimeout(
+            () => spans.forEach((span) => span.classList.remove("anim")),
+            500
+          );
+        };
+      </script>
+    </section>
     <section id="input-section">
       <div>
         <span>@</span>
-        <input
-          type="text"
-          placeholder="username"
-          onchange="inputChange()"
-          maxlength="16"
-        />
+        <input type="text" placeholder="username" maxlength="16" />
         <span class="char-counter">16</span>
       </div>
       <script>
