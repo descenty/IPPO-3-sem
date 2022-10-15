@@ -14,13 +14,41 @@
           <div class="captcha-panel">
             <div>
               <img src="color noise.jpg" alt="color-noise" />
-              <span>AnopRH</span>
+              <span class="captcha-text">AnopRH</span>
             </div>
-            <button>?</button>
+            <button onclick="updateCaptcha()"><i class="fi fi-rr-rotate-right"></i></button>
           </div>
         </div>
-        <input type="text" placeholder="Введите капчу" />
+        <div class="captcha-input-div">
+          <input
+            class="captcha-input"
+            type="text"
+            placeholder="Введите капчу"
+          />
+          <button>Проверить</button>
+        </div>
       </div>
+      <script>
+        const generateCaptcha = (length) => {
+          let result = "";
+          let characters =
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+          for (let i = 0; i < length; i++) {
+            result += characters.charAt(
+              Math.floor(Math.random() * characters.length)
+            );
+          }
+          return result;
+        };
+        let captchaText = document.querySelector(".captcha-text");
+        let captchaInput = document.querySelector(".captcha-input");
+        let captcha;
+        const updateCaptcha = () => {
+          captcha = generateCaptcha(6);
+          captchaText.innerHTML = captcha;
+        };
+        updateCaptcha();
+      </script>
     </section>
   </body>
 </html>
