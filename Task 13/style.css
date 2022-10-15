@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #222831;
+  font-family: "Nunito", sans-serif;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.captcha-window {
+  display: flex;
+  flex-direction: column;
+  background: #313b4a;
+  padding: 1.5em;
+  gap: 0.8em;
+  text-align: center;
+  width: 350px;
+  height: 200px;
+  position: relative;
+}
+
+.captcha-window h1 {
+  color: #4db2ec;
+  font-size: 30px;
+}
+
+.captcha-panel {
+  height: 45px;
+  position: relative;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.captcha-panel div {
+  grid-column: span 5;
+  position: relative;
+}
+
+.captcha-panel img {
+  width: 100%;
+  height: 45px;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  filter: contrast(30%) brightness(150%);
+  border-radius: 5px;
+}
+
+.captcha-panel button {
+  border-radius: 5px;
+  border-style: none;
+  background: #4db2ec;
+  color: white;
+}
+
+.captcha-panel span {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
