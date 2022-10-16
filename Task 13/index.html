@@ -7,7 +7,7 @@
     <title>Обработчики событий на JS</title>
   </head>
   <body>
-    <section>
+    <!-- <section>
       <div class="captcha-window">
         <h1>Капча на JS</h1>
         <div>
@@ -16,7 +16,9 @@
               <img src="color noise.jpg" alt="color-noise" />
               <span class="captcha-text">AnopRH</span>
             </div>
-            <button onclick="updateCaptcha()"><i class="fi fi-rr-rotate-right"></i></button>
+            <button onclick="updateCaptcha()">
+              <i class="fi fi-rr-rotate-right"></i>
+            </button>
           </div>
         </div>
         <div class="captcha-input-div">
@@ -25,8 +27,9 @@
             type="text"
             placeholder="Введите капчу"
           />
-          <button>Проверить</button>
+          <button onclick="checkCaptcha()">Проверить</button>
         </div>
+        <span class="result-message"></span>
       </div>
       <script>
         const generateCaptcha = (length) => {
@@ -40,14 +43,180 @@
           }
           return result;
         };
+        const checkCaptcha = () => {
+          if (captchaInput.value == captcha) {
+            resultText.innerHTML = "Круто! Похоже, Вы не робот";
+            resultText.style.color = "#1DD620";
+            let lastCaptcha = captcha;
+            setTimeout(() => {
+              if (lastCaptcha === captcha) {
+                updateCaptcha();
+              }
+            }, 3000);
+          } else {
+            resultText.innerHTML = "Неверная капча! Попробуйте ещё раз";
+            resultText.style.color = "red";
+          }
+        };
         let captchaText = document.querySelector(".captcha-text");
         let captchaInput = document.querySelector(".captcha-input");
+        let resultText = document.querySelector(".result-message");
         let captcha;
         const updateCaptcha = () => {
           captcha = generateCaptcha(6);
           captchaText.innerHTML = captcha;
+          resultText.innerHTML = "";
+          captchaInput.value = "";
         };
         updateCaptcha();
+      </script>
+    </section> -->
+    <!-- <section class="timeout-section">
+      <div>
+        <h1>Трепещите! Сессия уже близко!</h1>
+        <div class="timer-divs">
+          <div>
+            <h2 class="days">36</h2>
+            <span>Дней</span>
+          </div>
+          <div>
+            <h2 class="hours">1</h2>
+            <span>Часов</span>
+          </div>
+          <div>
+            <h2 class="minutes">14</h2>
+            <span>Минут</span>
+          </div>
+          <div>
+            <h2 class="seconds">44</h2>
+            <span>Секунд</span>
+          </div>
+        </div>
+        <img src="student.jpg" alt="student">
+      </div>
+      <script>
+        let days = document.querySelector(".days");
+        let hours = document.querySelector(".hours");
+        let minutes = document.querySelector(".minutes");
+        let seconds = document.querySelector(".seconds");
+        const endTime = new Date("2022-12-23T09:00:00");
+        const updateTimer = () => {
+          if (new Date() > endTime) {
+            clearInterval(timer);
+          } else {
+            let timeDiff = Math.floor((endTime - new Date()) / 1000);
+            days.innerText = Math.floor(timeDiff / 60 / 60 / 24);
+            hours.innerText = Math.floor(timeDiff / 60 / 60 % 24);
+            minutes.innerText = Math.floor(timeDiff / 60 % 60);
+            seconds.innerText = Math.floor(timeDiff % 60);
+          }
+        };
+        let timer = setInterval(updateTimer, 1000);
+        updateTimer();
+      </script>
+    </section> -->
+    <!-- <section>
+      <div class="stats">
+        <div>
+          <img src="youtube.svg" alt="youtube"/>
+          <h4 class="youtube-value"></h4>
+          <h3>Просмотров</h3>
+        </div>
+        <div>
+          <img src="linkedin.svg" alt="linkedin" />
+          <h4 class="linkedin-value"></h4>
+          <h3>Проектов</h3>
+        </div>
+        <div>
+          <img src="facebook.svg" alt="facebook" />
+          <h4 class="facebook-value"></h4>
+          <h3>Друзей</h3>
+        </div>
+        <div>
+          <img src="twitter.svg" alt="twitter" />
+          <h4 class="twitter-value"></h4>
+          <h3>Постов</h3>
+        </div>
+      </div>
+      <script>
+        const lerp = (start, end, t) => start + (end - start) * t;
+        const easeOut = (t) => 1 - Math.pow(1 - t, 2);
+
+        let youtubeSpan = document.querySelector(".youtube-value");
+        let linkedinSpan = document.querySelector(".linkedin-value");
+        let facebookSpan = document.querySelector(".facebook-value");
+        let twitterSpan = document.querySelector(".twitter-value");
+        let youtubeValue = 9000;
+        let linkedinValue = 1000;
+        let facebookValue = 7000;
+        let twitterValue = 5000;
+        let interval;
+        let t = 0;
+        function valueInterpolate() {
+          t += 0.01;
+          youtubeSpan.innerText = Math.round(lerp(0, youtubeValue, easeOut(t)));
+          linkedinSpan.innerText = Math.round(lerp(0, linkedinValue, easeOut(t)));
+          facebookSpan.innerText = Math.round(lerp(0, facebookValue, easeOut(t)));
+          twitterSpan.innerText = Math.round(lerp(0, twitterValue, easeOut(t)));
+          if (youtubeSpan.innerText == youtubeValue) clearInterval(interval);
+        }
+        interval = setInterval(valueInterpolate, 20);
+      </script>
+    </section> -->
+    <section>
+      <div class="rating-window">
+        <div class="rating">
+          <img src="star.png" alt="*" />
+          <img src="star.png" alt="*" />
+          <img src="star.png" alt="*" />
+          <img src="star.png" alt="*" />
+          <img src="star.png" alt="*" />
+        </div>
+        <h1>ЭТО ШЕДЕВР 😍</h1>
+        <textarea
+          name="message"
+          id="message"
+          rows="4"
+          placeholder="Поделитесь своим опытом"
+        ></textarea>
+        <button>Отправить</button>
+      </div>
+      <script>
+        const messages = [
+          "УЖАСНО 💩",
+          "ПЛОХО 🙁",
+          "СОЙДЁТ 😏",
+          "ХОРОШО 😀",
+          "ЭТО ШЕДЕВР 😍",
+        ];
+        const selectStar = (index) => {
+          for (let i = 0; i <= index; i++) {
+            stars[i].classList.add("star-hover");
+          }
+        };
+        let ratingWindow = document.querySelector(".rating-window");
+        let stars = ratingWindow.querySelectorAll("img");
+        let messageH1 = ratingWindow.querySelector("h1");
+        stars.forEach((star, index) => {
+          star.onmouseenter = () => {
+            for (let i = 0; i <= index; i++)
+              stars[i].classList.add("star-hover");
+          };
+          star.onmouseleave = () => {
+            stars.forEach((star) => {
+              star.classList.remove("star-hover");
+            });
+          };
+          star.onclick = () => {
+            stars.forEach((star) => {
+              star.classList.remove("star-hover", "star-select");
+            });
+            for (let i = 0; i <= index; i++)
+              stars[i].classList.add("star-select");
+            ratingWindow.classList.add("opened");
+            messageH1.innerText = messages[index];
+          };
+        });
       </script>
     </section>
   </body>
