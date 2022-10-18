@@ -164,6 +164,29 @@
       </script>
     </section> -->
     <section>
+      <div class="login-window">
+        <h1>Логин</h1>
+        <div>
+          <input id="email" type="text" placeholder="Почта" />
+          <i class="fi fi-sr-envelope"></i>
+        </div>
+        <div>
+          <input id="password" type="text" placeholder="Пароль" />
+          <i class="fi fi-sr-lock"></i>
+        </div>
+        <span class="forgot-password">Забыли пароль?</span>
+        <button onclick="login()">Войти</button>
+        <span
+          >Нет аккаунта? <span class="register">Зарегистрируйтесь!</span></span
+        >
+      </div>
+      <script>
+        const emailInput = document.querySelector("#email");
+        const passwordInput = document.querySelector("#password");
+        const login = () => {};
+      </script>
+    </section>
+    <!-- <section>
       <div class="rating-window">
         <div class="rating">
           <img src="star.png" alt="*" />
@@ -231,6 +254,6 @@
           thanksPanel.classList.add("shown");
         };
       </script>
-    </section>
+    </section> -->
   </body>
 </html>
