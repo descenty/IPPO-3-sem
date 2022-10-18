@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Nunito:wght@200;300;400;500;600;700;800&display=swap");
 @import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
 @import url("https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css");
-@import url('https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import url("https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css");
 
 * {
   margin: 0;
@@ -297,30 +297,39 @@ section {
   align-items: center;
   border-radius: 5px;
   padding: 1em;
-  gap: 1em;
   width: 300px;
+  gap: 0.4em;
 }
 
 .login-window div {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.login-window div i {
+.login-window div i:nth-child(2) {
   color: rgb(175, 175, 175);
   font-size: 14px;
   position: absolute;
   left: 10;
-  top: 13px
+  top: 13px;
 }
 
-.login-window div:nth-child(3) i {
+.login-window div:nth-child(3) i:nth-child(2) {
   font-size: 14.5px;
 }
 
+.login-window div i:nth-child(3) {
+  color: #dc3545;
+  top: 13px;
+  right: 10;
+  display: none;
+  position: absolute;
+}
 
 .login-window h1 {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 30px;
 }
 
@@ -337,10 +346,42 @@ section {
 }
 
 .login-window input:focus {
-  outline-color: red;
+  outline-width: 1px;
+  outline-color: gray;
+  box-shadow: none;
 }
 
-.forgot-password, .register {
+.login-window .error-input {
+  outline-style: solid;
+  outline-color: #dc3545;
+  outline-width: 1px;
+  box-shadow: 0px 2.5px px #dc3545;
+  border: none;
+}
+
+.login-window .error-animate {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  25% {
+    margin-left: 5px;
+  }
+  50% {
+    margin-left: -5px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+.login-window input ~ span {
+  margin-top: 4px;
+  color: #dc3545;
+}
+
+.forgot-password,
+.register {
   cursor: pointer;
 }
 
@@ -349,7 +390,7 @@ section {
   align-self: flex-start;
   font-size: 14px;
   font-weight: 500;
-  margin-top: -8px;
+  margin-top: -12px;
   margin-bottom: 8px;
 }
 
@@ -362,6 +403,8 @@ section {
   border-radius: 5px;
   font-size: 15px;
   font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .login-window span {

@@ -169,10 +169,14 @@
         <div>
           <input id="email" type="text" placeholder="Почта" />
           <i class="fi fi-sr-envelope"></i>
+          <i class="fi fi-sr-exclamation email-error-icon"></i>
+          <span class="email-error"></span>
         </div>
         <div>
-          <input id="password" type="text" placeholder="Пароль" />
+          <input id="password" type="password" placeholder="Пароль" />
           <i class="fi fi-sr-lock"></i>
+          <i class="fi fi-sr-exclamation password-error-icon"></i>
+          <span class="password-error"></span>
         </div>
         <span class="forgot-password">Забыли пароль?</span>
         <button onclick="login()">Войти</button>
@@ -183,7 +187,54 @@
       <script>
         const emailInput = document.querySelector("#email");
         const passwordInput = document.querySelector("#password");
-        const login = () => {};
+        const emailDiv = emailInput.parentElement;
+        const passwordDiv = passwordInput.parentElement;
+        const emailError = document.querySelector(".email-error");
+        const passwordError = document.querySelector(".password-error");
+        const emailErrorIcon = document.querySelector(".email-error-icon");
+        const passwordErrorIcon = document.querySelector(
+          ".password-error-icon"
+        );
+        const login = () => {
+          let goodEmail = true;
+          let goodPassword = true;
+          if (emailInput.value == "") {
+            goodEmail = false;
+            emailError.innerText = "Это поле не может быть пустым";
+            emailErrorIcon.style.display = "inline";
+            emailInput.classList.add("error-input");
+            emailDiv.classList.add("error-animate");
+            setTimeout(() => emailDiv.classList.remove("error-animate"), 500);
+          } else if (!/^\w+@\w+\.\w+/.test(emailInput.value)) {
+            goodEmail = false;
+            emailError.innerText = "Введите правильный адрес";
+            emailErrorIcon.style.display = "inline";
+            emailInput.classList.add("error-input");
+            emailDiv.classList.add("error-animate");
+            setTimeout(() => emailDiv.classList.remove("error-animate"), 500);
+          } else {
+            emailError.innerText = "";
+            emailErrorIcon.style.display = "none";
+            emailInput.classList.remove("error-input");
+          }
+          if (passwordInput.value == "") {
+            goodPassword = false;
+            passwordError.innerText = "Это поле не может быть пустым";
+            passwordErrorIcon.style.display = "inline";
+            passwordInput.classList.add("error-input");
+            passwordDiv.classList.add("error-animate");
+            setTimeout(
+              () => passwordDiv.classList.remove("error-animate"),
+              500
+            );
+          } else {
+            passwordError.innerText = "";
+            passwordErrorIcon.style.display = "none";
+            passwordInput.classList.remove("error-input");
+          }
+          if (goodEmail && goodPassword)
+            document.location.href = "https://www.google.ru/";
+        };
       </script>
     </section>
     <!-- <section>
