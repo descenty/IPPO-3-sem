@@ -179,7 +179,11 @@
           rows="4"
           placeholder="Поделитесь своим опытом"
         ></textarea>
-        <button>Отправить</button>
+        <button onclick="sendReview()">Отправить</button>
+        <div class="thanks-panel">
+          <h2>Спасибо за отзыв!</h2>
+          <span>Изменить</span>
+        </div>
       </div>
       <script>
         const messages = [
@@ -197,6 +201,7 @@
         let ratingWindow = document.querySelector(".rating-window");
         let stars = ratingWindow.querySelectorAll("img");
         let messageH1 = ratingWindow.querySelector("h1");
+        let thanksPanel = ratingWindow.querySelector(".thanks-panel");
         stars.forEach((star, index) => {
           star.onmouseenter = () => {
             for (let i = 0; i <= index; i++)
@@ -217,6 +222,14 @@
             messageH1.innerText = messages[index];
           };
         });
+        thanksPanel.querySelector("span").onclick = () => {
+          thanksPanel.classList.remove("shown");
+          ratingWindow.classList.add("opened");
+        };
+        const sendReview = () => {
+          ratingWindow.classList.remove("opened");
+          thanksPanel.classList.add("shown");
+        };
       </script>
     </section>
   </body>
