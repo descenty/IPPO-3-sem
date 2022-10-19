@@ -7,7 +7,7 @@
     <title>Обработчики событий на JS</title>
   </head>
   <body>
-    <!-- <section>
+    <section>
       <div class="captcha-window">
         <h1>Капча на JS</h1>
         <div>
@@ -70,8 +70,8 @@
         };
         updateCaptcha();
       </script>
-    </section> -->
-    <!-- <section class="timeout-section">
+    </section>
+    <section class="timeout-section">
       <div>
         <h1>Трепещите! Сессия уже близко!</h1>
         <div class="timer-divs">
@@ -92,7 +92,7 @@
             <span>Секунд</span>
           </div>
         </div>
-        <img src="student.jpg" alt="student">
+        <img src="student.jpg" alt="student" />
       </div>
       <script>
         let days = document.querySelector(".days");
@@ -106,19 +106,81 @@
           } else {
             let timeDiff = Math.floor((endTime - new Date()) / 1000);
             days.innerText = Math.floor(timeDiff / 60 / 60 / 24);
-            hours.innerText = Math.floor(timeDiff / 60 / 60 % 24);
-            minutes.innerText = Math.floor(timeDiff / 60 % 60);
+            hours.innerText = Math.floor((timeDiff / 60 / 60) % 24);
+            minutes.innerText = Math.floor((timeDiff / 60) % 60);
             seconds.innerText = Math.floor(timeDiff % 60);
           }
         };
         let timer = setInterval(updateTimer, 1000);
         updateTimer();
       </script>
-    </section> -->
-    <!-- <section>
+    </section>
+    <section id="search-section">
+      <div class="search">
+        <i class="fi fi-br-search" onclick="toggleSearch()"></i>
+        <div>
+          <input type="text" placeholder="Поиск" />
+          <i
+            class="fi fi-rr-cross-small clear-search"
+            onclick="clearSearch()"
+          ></i>
+        </div>
+      </div>
+      <div class="close-trigger"></div>
+      <script>
+        let searchCloseTrigger = document.querySelector(".close-trigger");
+        let searchPanel = document.querySelector(".search");
+        let searchInput = searchPanel.querySelector("input");
+        let opened = false;
+        const toggleSearch = () =>
+          (opened = !opened)
+            ? searchPanel.classList.add("opened")
+            : searchPanel.classList.remove("opened");
+        searchCloseTrigger.onclick = () => {
+          opened = false;
+          searchPanel.classList.remove("opened");
+        };
+        const clearSearch = () => (searchInput.value = "");
+      </script>
+    </section>
+    <section>
+      <div class="scientist-card">
+        <img src="jejnshtejn.jpg" alt="jejnshtejn" />
+        <div>
+          <h2>Альберт Эйнштейн</h2>
+          <h4>Ульм, Германская империя</h4>
+          <p>
+            Физик-теоретик, один из основателей современной теоретической физики
+          </p>
+          <div class="buttons">
+            <button>Сообщение</button>
+            <button>Подписаться</button>
+          </div>
+          <div class="social-buttons">
+            <i class="fi fi-brands-facebook"></i>
+            <i class="fi fi-brands-twitter"></i>
+            <i class="fi fi-brands-instagram"></i>
+          </div>
+        </div>
+      </div>
+      <script>
+        const scientistCard = document.querySelector(".scientist-card");
+        const scientistImage = scientistCard.querySelector("img");
+        let toggle = false;
+        scientistImage.onclick = () => {
+          (toggle = !toggle)
+            ? scientistImage.classList.add("opened")
+            : scientistImage.classList.remove("opened");
+        };
+        scientistCard.onmouseleave = () => {
+          scientistImage.classList.remove("opened");
+        };
+      </script>
+    </section>
+    <section>
       <div class="stats">
         <div>
-          <img src="youtube.svg" alt="youtube"/>
+          <img src="youtube.svg" alt="youtube" />
           <h4 class="youtube-value"></h4>
           <h3>Просмотров</h3>
         </div>
@@ -155,43 +217,19 @@
         function valueInterpolate() {
           t += 0.01;
           youtubeSpan.innerText = Math.round(lerp(0, youtubeValue, easeOut(t)));
-          linkedinSpan.innerText = Math.round(lerp(0, linkedinValue, easeOut(t)));
-          facebookSpan.innerText = Math.round(lerp(0, facebookValue, easeOut(t)));
+          linkedinSpan.innerText = Math.round(
+            lerp(0, linkedinValue, easeOut(t))
+          );
+          facebookSpan.innerText = Math.round(
+            lerp(0, facebookValue, easeOut(t))
+          );
           twitterSpan.innerText = Math.round(lerp(0, twitterValue, easeOut(t)));
           if (youtubeSpan.innerText == youtubeValue) clearInterval(interval);
         }
         interval = setInterval(valueInterpolate, 20);
       </script>
-    </section> -->
-    <section id="search-section">
-      <div class="search">
-        <i class="fi fi-br-search" onclick="toggleSearch()"></i>
-        <div>
-          <input type="text" placeholder="Поиск" />
-          <i
-            class="fi fi-rr-cross-small clear-search"
-            onclick="clearSearch()"
-          ></i>
-        </div>
-      </div>
-      <div class="close-trigger"></div>
-      <script>
-        let searchCloseTrigger = document.querySelector(".close-trigger");
-        let searchPanel = document.querySelector(".search");
-        let searchInput = searchPanel.querySelector("input");
-        let opened = false;
-        const toggleSearch = () =>
-          (opened = !opened)
-            ? searchPanel.classList.add("opened")
-            : searchPanel.classList.remove("opened");
-        searchCloseTrigger.onclick = () => {
-          opened = false;
-          searchPanel.classList.remove("opened");
-        };
-        const clearSearch = () => (searchInput.value = "");
-      </script>
     </section>
-    <!-- <section>
+    <section>
       <div class="login-window">
         <h1>Логин</h1>
         <div>
@@ -264,8 +302,8 @@
             document.location.href = "https://www.google.ru/";
         };
       </script>
-    </section> -->
-    <!-- <section>
+    </section>
+    <section>
       <div class="rating-window">
         <div class="rating">
           <img src="star.png" alt="*" />
@@ -333,6 +371,6 @@
           thanksPanel.classList.add("shown");
         };
       </script>
-    </section> -->
+    </section>
   </body>
 </html>
