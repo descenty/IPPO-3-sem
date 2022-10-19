@@ -1,0 +1,29 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Работа с объектами геолокации</title>
+  </head>
+  <body>
+    <section id="movies-section">
+      <script>
+        const moviesSection = document.querySelector("#movies-section");
+        fetch(
+          "https://api.themoviedb.org/3/movie/popular?api_key=e1dc312f6c89f0f774684039c6d67a06"
+        ).then((response) =>
+          response.json().then((data) => {
+            data.results.slice(0, 10).forEach((movie) => {
+              const movieElement = Object.assign(document.createElement("div"), {
+                innerHTML: `<img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt=""/><h3>${movie.title}</h3>`,
+              });
+              movieElement.classList.add("movie");
+              moviesSection.appendChild(movieElement);
+            });
+          })
+        );
+      </script>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Nunito:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css");
+@import url("https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background: #222831;
+}
+
+button {
+  cursor: pointer;
+}
+
+section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  flex-wrap: wrap;
+  padding: 1em;
+}
+
+#movies-section {
+  gap: 1em;
+}
+
+.movie {
+  background: #333F52;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.8em;
+  border-radius: 10px;
+  height: 340px;
+  width: 180px;
+  text-align: center;
+  gap: 0.5em;
+}
+
+.movie img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
