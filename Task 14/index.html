@@ -46,5 +46,65 @@
         };
       </script>
     </section>
+    <section>
+      <div class="currencies-converter">
+        <h1>Конвертер валют</h1>
+        <div class="converter-grid">
+          <input type="number" id="currency1-value" />
+          <select id="currency1"></select>
+          <input type="number" id="currency2-value" readonly />
+          <select id="currency2"></select>
+        </div>
+      </div>
+      <script>
+        const currency1 = document.querySelector("#currency1");
+        const currency2 = document.querySelector("#currency2");
+        const currency1Value = document.querySelector("#currency1-value");
+        const currency2Value = document.querySelector("#currency2-value");
+        let currencies = [];
+        const loadCurrencies = async () => {
+          ruble = {
+            RUB: {
+              Name: "Российский рубль",
+              Nominal: 1,
+              Value: 1,
+            },
+          };
+          await fetch("https://www.cbr-xml-daily.ru/daily_json.js").then(
+            (response) =>
+              response.json().then((data) => {
+                currencies = Object.assign(ruble, data.Valute);
+              })
+          );
+          Object.keys(currencies).forEach((key) => {
+            let currency = currencies[key];
+            currency1.add(
+              new Option(
+                `${key} ${currency.Name}`,
+                currency.Value / currency.Nominal
+              )
+            );
+            currency2.add(
+              new Option(
+                `${key} ${currency.Name}`,
+                currency.Value / currency.Nominal
+              )
+            );
+          });
+        };
+        loadCurrencies();
+        const updateExchange = () => {
+          currency1.value == currency2.value &&
+            alert("Выберите отличающиеся валюты");
+          currency2Value.value = (
+            (currency1Value.value * currency1.value) /
+            currency2.value
+          ).toFixed(2);
+        };
+        currency1Value.oninput = () => updateExchange();
+        currency1.onchange = () => updateExchange();
+        currency2.onchange = () => updateExchange();
+      </script>
+    </section>
   </body>
 </html>
