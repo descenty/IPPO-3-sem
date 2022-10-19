@@ -1,0 +1,50 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Использование fetch, then и catch</title>
+  </head>
+  <body>
+    <section>
+      <div class="cat-dogs-generator">
+        <div>
+          <div>
+            Случайный кот
+            <img class="cat-image" src="cat.jfif" alt="" />
+          </div>
+          <button onclick="getCat()">Получить кота</button>
+        </div>
+        <div>
+          <div>
+            Случайная собака
+            <img class="dog-image" src="" alt="" />
+          </div>
+          <button onclick="getDog()">Получить собаку</button>
+        </div>
+      </div>
+      <script>
+        const catImage = document.querySelector(".cat-image");
+        const dogImage = document.querySelector(".dog-image");
+        const getCat = () => {
+          fetch("https://cataas.com/cat").then((response) =>
+            response.blob().then((imageBlob) => {
+              const imageObjectURL = URL.createObjectURL(imageBlob);
+              catImage.src = imageObjectURL;
+              catImage.style.display = "block";
+            })
+          );
+        };
+        const getDog = () => {
+          fetch("https://dog.ceo/api/breeds/image/random").then((response) =>
+            response.json().then((data) => {
+              dogImage.src = data.message;
+              dogImage.style.display = "block"
+            })
+          );
+        };
+      </script>
+    </section>
+  </body>
+</html>
