@@ -7,7 +7,7 @@
     <title>Работа с объектами геолокации</title>
   </head>
   <body>
-    <section id="movies-section">
+    <!-- <section id="movies-section">
       <script>
         const moviesSection = document.querySelector("#movies-section");
         fetch(
@@ -23,6 +23,75 @@
             });
           })
         );
+      </script>
+    </section> -->
+    <section>
+      <div class="weather-window">
+        <h2>Weather App</h2>
+        <div>
+          <div class="weather-input-panel">
+            <input
+              type="text"
+              placeholder="Enter city name"
+              onkeydown="search(this)"
+            />
+            <div>
+              <hr />
+              <span>or</span>
+            </div>
+            <button>Get Device Location</button>
+          </div>
+          <div class="weather-data-panel">
+            <img src="cloudy.png" alt="" />
+            <h1>-1°C</h1>
+            <h4>overcast clouds</h4>
+            <h4>Moscow, RU</h4>
+            <div>
+              <div>
+                <i></i>
+                <div>
+                  <h4>-5°C</h4>
+                  <span>Feels like</span>
+                </div>
+              </div>
+              <div>
+                <i></i>
+                <div>
+                  <h4>92%</h4>
+                  <span>Humidity</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        const appid = "879b6e4ef63abefd6fa01b2a25c7999a";
+        const search = (element) =>
+          event.key === "Enter" && alert(element.value);
+        const getWeatherData = (query) => {
+          fetch(
+            "https://api.openweathermap.org/data/2.5/weather?lat=55.755826&lon=37.6173&appid=879b6e4ef63abefd6fa01b2a25c7999a"
+          ).then((response) => response.json().then());
+        };
+        const options = {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0,
+        };
+
+        function success(pos) {
+          const crd = pos.coords;
+          console.log("Your current position is:");
+          console.log(`Latitude : ${crd.latitude}`);
+          console.log(`Longitude: ${crd.longitude}`);
+          console.log(`More or less ${crd.accuracy} meters.`);
+        }
+
+        function error(err) {
+          console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+        navigator.geolocation.getCurrentPosition(success, error, options);
       </script>
     </section>
   </body>
