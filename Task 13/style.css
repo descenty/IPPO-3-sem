@@ -179,6 +179,14 @@ section {
   border-radius: 10px;
 }
 
+@media (max-width: 650px) {
+  .stats {
+    flex-direction: column;
+    gap: 0;
+    width: 150px;
+  }
+}
+
 .stats div {
   display: flex;
   flex-direction: column;
