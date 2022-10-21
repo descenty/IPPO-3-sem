@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Nunito:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background: #dbeef1;
+  display: flex;
+  flex-direction: column;
+}
+
+body > section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  background: #1a374d;
+  color: rgb(204, 230, 255);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+.home-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  width: 200px;
+  height: 400px;
+}
+
+.login-form h1 {
+  text-align: center;
+  font-size: 32px;
+}
+
+.login-form input {
+  height: 30px;
+  border-radius: 5px;
+  border-style: none;
+  text-indent: 1em;
+}
+
+.login-form div:nth-child(2),
+.login-form div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.login-form div:nth-child(4) {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  width: 100%;
+}
+
+.login-form input[type="submit"] {
+  border-radius: 5px;
+  background-color: #0d6efd;
+  border-style: none;
+  color: white;
+  cursor: pointer;
+  text-indent: 0;
+}
+
+.lk {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.news-list div {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.news-page {
+  margin-top: 2em;
+  align-self: center;
+  background-color: white;
+  padding: 2em;
+  padding-inline: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 800px;
+  border-radius: 10px;
+}
+
+.news-page img {
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+}
