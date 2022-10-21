@@ -27,37 +27,48 @@
     </section> -->
     <section>
       <div class="weather-window">
-        <h2>Weather App</h2>
-        <div>
-          <div class="weather-input-panel">
+        <div class="weather-input-panel">
+          <div>
+            <h2>Weather App</h2>
+          </div>
+          <div>
             <input
               type="text"
               placeholder="Enter city name"
-              onkeydown="search(this)"
+              onkeydown="dataBySearch(this)"
             />
             <div>
               <hr />
               <span>or</span>
             </div>
-            <button>Get Device Location</button>
+            <button onclick="dataByLocation()">Get Device Location</button>
           </div>
-          <div class="weather-data-panel">
-            <img src="cloudy.png" alt="" />
-            <h1>-1°C</h1>
-            <h4>overcast clouds</h4>
-            <h4>Moscow, RU</h4>
-            <div>
+        </div>
+        <div class="weather-data-panel" style="display: none;">
+          <div>
+            <i class="fi fi-rr-arrow-small-left" onclick="toInputPanel()"></i>
+            <h2>Weather App</h2>
+          </div>
+          <div>
+            <img class="weather-icon" src="cloudy.png" alt="" />
+            <h1 class="temperature">-1°C</h1>
+            <h3 class="weather-name">overcast clouds</h3>
+            <div class="location-div">
+              <i class="fi fi-br-marker"></i>
+              <h3 class="location-name">Moscow, RU</h3>
+            </div>
+            <div class="weather-stats">
               <div>
-                <i></i>
+                <i class="fi fi-rr-temperature-low"></i>
                 <div>
-                  <h4>-5°C</h4>
+                  <h4 class="feels-like">-5°C</h4>
                   <span>Feels like</span>
                 </div>
               </div>
               <div>
-                <i></i>
+                <i class="fi fi-rs-humidity"></i>
                 <div>
-                  <h4>92%</h4>
+                  <h4 class="humidity">92%</h4>
                   <span>Humidity</span>
                 </div>
               </div>
@@ -66,14 +77,41 @@
         </div>
       </div>
       <script>
-        const appid = "879b6e4ef63abefd6fa01b2a25c7999a";
-        const search = (element) =>
-          event.key === "Enter" && alert(element.value);
-        const getWeatherData = (query) => {
-          fetch(
-            "https://api.openweathermap.org/data/2.5/weather?lat=55.755826&lon=37.6173&appid=879b6e4ef63abefd6fa01b2a25c7999a"
-          ).then((response) => response.json().then());
+        const weatherWindow = document.querySelector(".weather-window");
+        const weatherDataPanel = weatherWindow.querySelector(
+          ".weather-data-panel"
+        );
+        const weatherIcon = weatherDataPanel.querySelector(".weather-icon");
+        const weatherName = weatherDataPanel.querySelector(".weather-name");
+        const temperature = weatherDataPanel.querySelector(".temperature");
+        const locationName = weatherDataPanel.querySelector(".location-name");
+        const feelsLike = weatherDataPanel.querySelector(".feels-like");
+        const humidity = weatherDataPanel.querySelector(".humidity");
+        const toInputPanel = () => {
+          weatherWindow.classList.remove("opened");
+          weatherWindow.lastElementChild.style.display = "none";
+          weatherWindow.firstElementChild.style.display = "flex";
         };
+        const toDataPanel = (data) => {
+          weatherWindow.classList.add("opened");
+          weatherWindow.firstElementChild.style.display = "none";
+          weatherWindow.lastElementChild.style.display = "flex";
+
+          weatherName.innerText = data.weather[0].description;
+          temperature.innerText = Math.round(data.main.temp) + "°C";
+          locationName.innerText = `${data.name}, ${data.sys.country}`;
+          feelsLike.innerText = Math.round(data.main.feels_like) + "°C";
+          humidity.innerText = data.main.humidity + "%";
+        };
+
+        const appid = "879b6e4ef63abefd6fa01b2a25c7999a";
+        const getWeatherData = (query) =>
+          new Promise((resolve, reject) => {
+            fetch(
+              "https://api.openweathermap.org/data/2.5/weather?units=metric&appid=879b6e4ef63abefd6fa01b2a25c7999a&" +
+                query
+            ).then((response) => response.json().then((data) => resolve(data)));
+          });
         const options = {
           enableHighAccuracy: true,
           timeout: 5000,
@@ -92,6 +130,25 @@
           console.warn(`ERROR(${err.code}): ${err.message}`);
         }
         navigator.geolocation.getCurrentPosition(success, error, options);
+
+        const dataBySearch = (element) =>
+          event.key === "Enter" &&
+          getWeatherData("q=" + element.value).then((data) =>
+            toDataPanel(data)
+          );
+
+        const dataByLocation = () => {
+          navigator.geolocation.getCurrentPosition(
+            (pos) => {
+              const srd = pos.coords;
+              getWeatherData(`lat=${srd.latitude}&lon=${srd.longitude}`).then(
+                (data) => toDataPanel(data)
+              );
+            },
+            error,
+            options
+          );
+        };
       </script>
     </section>
   </body>
