@@ -33,6 +33,10 @@ section {
   padding: 1em;
 }
 
+section:nth-child(2) {
+  height: 100%;
+}
+
 #movies-section {
   gap: 1em;
 }
@@ -187,6 +191,7 @@ section {
 .weather-data-panel h3 {
   font-weight: 500;
   font-size: 20px;
+  text-align: center;
 }
 
 .weather-data-panel .location-div {
@@ -195,6 +200,7 @@ section {
   display: flex;
   align-items: center;
   gap: 0.4em;
+  padding-inline: 1em;
 }
 
 .weather-data-panel h3 i {

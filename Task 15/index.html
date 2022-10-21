@@ -7,7 +7,7 @@
     <title>Работа с объектами геолокации</title>
   </head>
   <body>
-    <!-- <section id="movies-section">
+    <section id="movies-section">
       <script>
         const moviesSection = document.querySelector("#movies-section");
         fetch(
@@ -15,16 +15,19 @@
         ).then((response) =>
           response.json().then((data) => {
             data.results.slice(0, 10).forEach((movie) => {
-              const movieElement = Object.assign(document.createElement("div"), {
-                innerHTML: `<img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt=""/><h3>${movie.title}</h3>`,
-              });
+              const movieElement = Object.assign(
+                document.createElement("div"),
+                {
+                  innerHTML: `<img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt=""/><h3>${movie.title}</h3>`,
+                }
+              );
               movieElement.classList.add("movie");
               moviesSection.appendChild(movieElement);
             });
           })
         );
       </script>
-    </section> -->
+    </section>
     <section>
       <div class="weather-window">
         <div class="weather-input-panel">
@@ -50,7 +53,7 @@
             <h2>Weather App</h2>
           </div>
           <div>
-            <img class="weather-icon" src="cloudy.png" alt="" />
+            <img class="weather-icon" src="" alt="" />
             <h1 class="temperature">-1°C</h1>
             <h3 class="weather-name">overcast clouds</h3>
             <div class="location-div">
@@ -97,6 +100,7 @@
           weatherWindow.firstElementChild.style.display = "none";
           weatherWindow.lastElementChild.style.display = "flex";
 
+          weatherIcon.src = `weather/${data.weather[0].icon}.png`;
           weatherName.innerText = data.weather[0].description;
           temperature.innerText = Math.round(data.main.temp) + "°C";
           locationName.innerText = `${data.name}, ${data.sys.country}`;
@@ -111,7 +115,11 @@
               "https://api.openweathermap.org/data/2.5/weather?units=metric&appid=879b6e4ef63abefd6fa01b2a25c7999a&" +
                 query
             )
-              .then((response) => response.json().then((data) => resolve(data)))
+              .then((response) =>
+                response.ok
+                  ? response.json().then((data) => resolve(data))
+                  : reject("Failed to get weather data")
+              )
               .catch(() => reject("Failed to get weather data"));
           });
 
