@@ -44,7 +44,7 @@
             <button onclick="dataByLocation()">Get Device Location</button>
           </div>
         </div>
-        <div class="weather-data-panel" style="display: none;">
+        <div class="weather-data-panel" style="display: none">
           <div>
             <i class="fi fi-rr-arrow-small-left" onclick="toInputPanel()"></i>
             <h2>Weather App</h2>
@@ -110,43 +110,31 @@
             fetch(
               "https://api.openweathermap.org/data/2.5/weather?units=metric&appid=879b6e4ef63abefd6fa01b2a25c7999a&" +
                 query
-            ).then((response) => response.json().then((data) => resolve(data)));
+            )
+              .then((response) => response.json().then((data) => resolve(data)))
+              .catch(() => reject("Failed to get weather data"));
           });
-        const options = {
-          enableHighAccuracy: true,
-          timeout: 5000,
-          maximumAge: 0,
-        };
-
-        function success(pos) {
-          const crd = pos.coords;
-          console.log("Your current position is:");
-          console.log(`Latitude : ${crd.latitude}`);
-          console.log(`Longitude: ${crd.longitude}`);
-          console.log(`More or less ${crd.accuracy} meters.`);
-        }
-
-        function error(err) {
-          console.warn(`ERROR(${err.code}): ${err.message}`);
-        }
-        navigator.geolocation.getCurrentPosition(success, error, options);
 
         const dataBySearch = (element) =>
           event.key === "Enter" &&
-          getWeatherData("q=" + element.value).then((data) =>
-            toDataPanel(data)
-          );
+          getWeatherData("q=" + element.value)
+            .then((data) => toDataPanel(data))
+            .catch((reason) => alert(reason));
 
         const dataByLocation = () => {
           navigator.geolocation.getCurrentPosition(
-            (pos) => {
-              const srd = pos.coords;
-              getWeatherData(`lat=${srd.latitude}&lon=${srd.longitude}`).then(
-                (data) => toDataPanel(data)
-              );
-            },
-            error,
-            options
+            (pos) =>
+              getWeatherData(
+                `lat=${pos.coords.latitude}&lon=${pos.coords.longitude}`
+              )
+                .then((data) => toDataPanel(data))
+                .catch((reason) => alert(reason)),
+            () => alert("Failed to get location data"),
+            {
+              enableHighAccuracy: true,
+              timeout: 5000,
+              maximumAge: 0,
+            }
           );
         };
       </script>
