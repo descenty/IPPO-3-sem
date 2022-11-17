@@ -1,0 +1,13 @@
+.buttons {
+  display: flex;
+  gap: 1em;
+}
+
+.task1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}

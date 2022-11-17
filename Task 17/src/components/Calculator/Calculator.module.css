@@ -1,0 +1,50 @@
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 1em;
+    gap: 1em;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.255);
+    border-radius: 15px;
+    align-items: center;
+    background: white;
+}
+
+.calculator h3 {
+    text-align: left;
+    width: 80%
+}
+
+
+.calculator .numbers {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.calculator input {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    text-indent: 10px;
+}
+
+.calculator .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+}
+
+.calculator button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 20px;
+    cursor: pointer;
+}

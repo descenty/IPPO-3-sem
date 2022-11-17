@@ -1,0 +1,75 @@
+.button {
+  padding: 0.5em 2em;
+  font-size: 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.button:hover {
+  color: #1890ff;
+}
+
+.primary {
+  color: white !important;
+  background: #1890ff;
+}
+
+.primary:hover {
+  background: #3ca7ff;
+}
+
+.text {
+  background: none !important;
+  color: black;
+}
+
+.text:hover {
+  color: black;
+  transform: scale(1.05);
+}
+
+.link {
+  background: none !important;
+  color: #1890ff;
+}
+
+.link:hover {
+  transform: scale(1.05);
+}
+
+.disabled {
+  color: rgb(187, 187, 187) !important;
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.disabled.primary {
+  background: #f5f5f5;
+}
+
+.loading {
+  cursor: default;
+  color: rgb(187, 187, 187);
+  background: none;
+}
+
+.loading.primary {
+  background: #69b7ff;
+  color: rgb(236, 236, 236) !important;
+}
+
+.loading.text:hover,
+.loading.link:hover {
+  color: rgb(187, 187, 187);
+  transform: scale(1);
+}
+
+.loading:hover {
+  background: #69b7ff;
+}

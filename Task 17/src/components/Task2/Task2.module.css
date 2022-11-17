@@ -1,0 +1,91 @@
+.task2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.task_input {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task_input input {
+  width: 100%;
+  border-radius: 5px;
+  padding: 0.5em;
+  font-weight: 500;
+  font-size: 16px;
+  border-style: none;
+  background: #f5f5f5;
+  outline: none !important;
+  text-indent: 5px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 400px;
+}
+
+.task {
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  background: #f0f0f0;
+  transition: 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task:hover {
+  background: #f5f5f5;
+}
+
+.task:hover .delete_button,
+.task:hover .check_button {
+  opacity: 1;
+}
+
+.delete_button,
+.check_button {
+  transition: 0.3s;
+  cursor: pointer;
+  opacity: 0;
+  font-size: 22px;
+}
+
+.delete_button {
+  color: rgb(74, 74, 74);
+}
+
+.check_button {
+  color: #1890ff;
+}
+
+.check_button:hover,
+.delete_button:hover {
+  transform: scale(1.15);
+}
+
+.task_data {
+  display: flex;
+  flex-direction: column;
+}
+
+.task_data > span:nth-child(1) {
+  font-size: 14px;
+  color: rgb(128, 128, 128);
+}
+
+.task_data > span:nth-child(2) {
+  font-size: 18px;
+}
+
+.no_tasks {
+  color: gray;
+  margin-left: 20px;
+}
